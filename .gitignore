@@ -8,3 +8,8 @@ npm-debug.log*
 .vercel
 .netlify
 next-env.d.ts
+nextjs-export/*
+thomascrowehero/components/TopoCanvas.tsx
+thomascrowehero/components/Hero.tsx
+thomascrowehero/.claude/settings.local.json
+thomascrowehero/README.md

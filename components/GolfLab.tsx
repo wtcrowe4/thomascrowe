@@ -6,7 +6,7 @@ export function GolfLab() {
 	return (
 		<div
 			id="golf-section"
-			className="py-[140px] relative overflow-hidden border-y border-[var(--color-border)] bg-[var(--color-bg2)]"
+			className="py-35 relative overflow-hidden border-y border-border bg-bg2"
 		>
 			<div
 				className="absolute top-0 right-0 w-1/2 h-full pointer-events-none"
@@ -15,7 +15,7 @@ export function GolfLab() {
 						"radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--color-accent) 4%, transparent) 0%, transparent 60%)",
 				}}
 			/>
-			<section className="relative z-[2] max-w-[1280px] mx-auto px-12">
+			<section className="relative z-2 max-w-[1280px] mx-auto px-12">
 				<motion.div
 					initial={{ opacity: 0, y: 28 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -29,13 +29,13 @@ export function GolfLab() {
 							The 17th at <span className="serif-accent">Sawgrass</span>.<br />
 							Stats meet the splat.
 						</h2>
-						<p className="text-[17px] leading-[1.7] text-[var(--color-muted2)] max-w-[640px] mt-5">
+						<p className="text-[17px] leading-[1.7] text-muted2 max-w-160 mt-5">
 							A live data canvas overlaying PGA Tour shot data on an ultra-realistic Gaussian splat of the most famous par-3 in golf. Heatmaps, shot tracers, strokes-gained breakdowns — and an AI caddie waiting in the wings.
 						</p>
 					</div>
-					<div className="flex flex-col gap-1.5 font-mono text-[11px] text-[var(--color-muted)] tracking-[0.1em] lg:text-right">
+					<div className="flex flex-col gap-1.5 font-mono text-[11px] text-muted tracking-widest lg:text-right">
 						<div>HOLE 17 · PAR 3 · 137 YDS</div>
-						<div className="text-[var(--color-accent)] text-[14px]">TPC SAWGRASS</div>
+						<div className="text-accent text-[14px]">TPC SAWGRASS</div>
 						<div className="mt-3">Data: PGA Tour ShotLink</div>
 						<div>Render: Three.js + 3DGS</div>
 					</div>
@@ -47,7 +47,7 @@ export function GolfLab() {
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.1 }}
 						transition={{ duration: 0.8 }}
-						className="bg-[var(--color-bg)] border border-[var(--color-border)] aspect-[16/10] relative overflow-hidden"
+						className="bg-bg border border-border aspect-16/10 relative overflow-hidden"
 					>
 						<div
 							className="absolute inset-0 flex items-center justify-center"
@@ -76,13 +76,13 @@ export function GolfLab() {
 								<circle cx="640" cy="300" r="3" fill="var(--color-accent)" opacity="0.6" />
 								<circle cx="560" cy="340" r="3" fill="var(--color-accent)" opacity="0.7" />
 							</svg>
-							<div className="relative text-center flex flex-col items-center gap-5 max-w-[420px] px-10">
-								<div className="w-16 h-16 border border-[var(--color-accent)] flex items-center justify-center text-[var(--color-accent)] font-mono text-[14px]">⛳</div>
-								<div className="font-mono text-[10px] text-[var(--color-accent)] tracking-[0.25em] uppercase">Section · 3D Splat View</div>
+							<div className="relative text-center flex flex-col items-center gap-5 max-w-105 px-10">
+								<div className="w-16 h-16 border border-accent flex items-center justify-center text-accent font-mono text-[14px]">⛳</div>
+								<div className="font-mono text-[10px] text-accent tracking-[0.25em] uppercase">Section · 3D Splat View</div>
 								<div className="text-[24px] font-semibold tracking-[-0.02em]">
 									Gaussian splat of Hole 17<br />+ live shot tracers
 								</div>
-								<div className="text-[13px] text-[var(--color-muted2)] leading-[1.7]">
+								<div className="text-[13px] text-muted2 leading-[1.7]">
 									In-world fly-through with PGA Tour shot data layered as glowing arcs. Click any tracer to see the player, distance, and outcome. Coming with the splat capture.
 								</div>
 								<div className="flex gap-2 mt-2">
@@ -100,12 +100,12 @@ export function GolfLab() {
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true, amount: 0.1 }}
 							transition={{ duration: 0.8, delay: 0.1 }}
-							className="bg-[var(--color-bg)] border border-[var(--color-border)] aspect-square relative overflow-hidden"
+							className="bg-bg border border-border aspect-square relative overflow-hidden"
 						>
-							<span className="absolute top-3.5 left-4 font-mono text-[10px] text-[var(--color-accent)] tracking-[0.15em] uppercase z-[3]">
+							<span className="absolute top-3.5 left-4 font-mono text-[10px] text-accent tracking-[0.15em] uppercase z-3">
 								Overhead · Heatmap
 							</span>
-							<span className="absolute top-3.5 right-4 font-mono text-[9px] text-[var(--color-muted)] tracking-[0.1em] bg-[var(--color-surface)] border border-[var(--color-border)] px-2 py-0.5 z-[3]">
+							<span className="absolute top-3.5 right-4 font-mono text-[9px] text-muted tracking-widest bg-surface border border-border px-2 py-0.5 z-3">
 								Google Maps API
 							</span>
 							<svg viewBox="0 0 400 400" className="absolute inset-0 w-full h-full">
@@ -154,9 +154,9 @@ export function GolfLab() {
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true, amount: 0.1 }}
 							transition={{ duration: 0.8, delay: 0.2 }}
-							className="bg-[var(--color-bg)] border border-[var(--color-border)] p-6 flex-1 flex flex-col gap-4"
+							className="bg-bg border border-border p-6 flex-1 flex flex-col gap-4"
 						>
-							<div className="font-mono text-[10px] text-[var(--color-accent)] tracking-[0.15em] uppercase pb-3 border-b border-[var(--color-border)]">
+							<div className="font-mono text-[10px] text-accent tracking-[0.15em] uppercase pb-3 border-b border-border">
 								Strokes Gained · Hole 17
 							</div>
 							{[
@@ -167,8 +167,8 @@ export function GolfLab() {
 								["Shot Attempts (sample)", "412", ""],
 							].map(([label, val, klass]) => (
 								<div key={label} className="flex justify-between items-center py-1.5">
-									<span className="text-[12px] text-[var(--color-muted2)]">{label}</span>
-									<span className={`font-mono text-[13px] font-medium ${klass || "text-[var(--color-text)]"}`}>{val}</span>
+									<span className="text-[12px] text-muted2">{label}</span>
+									<span className={`font-mono text-[13px] font-medium ${klass || "text-text"}`}>{val}</span>
 								</div>
 							))}
 						</motion.div>
@@ -180,13 +180,13 @@ export function GolfLab() {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true, amount: 0.1 }}
 					transition={{ duration: 0.8, delay: 0.3 }}
-					className="mt-8 flex flex-col md:flex-row gap-4 items-start md:items-center px-6 py-5 bg-[var(--color-bg)] border border-[var(--color-border)]"
+					className="mt-8 flex flex-col md:flex-row gap-4 items-start md:items-center px-6 py-5 bg-bg border border-border"
 				>
-					<div className="w-9 h-9 bg-[var(--accent-glow)] border border-[color:color-mix(in_srgb,var(--color-accent)_30%,transparent)] flex items-center justify-center text-[var(--color-accent)] font-mono text-[14px] flex-shrink-0">✗</div>
-					<div className="flex-1 text-[13px] text-[var(--color-muted2)] leading-[1.5]">
-						<strong className="text-[var(--color-text)] font-semibold">Coming next:</strong> a "Play This Hole" mode — input your handicap, pick a club, get an AI-caddie recommendation, and see your simulated outcome against the field.
+					<div className="w-9 h-9 bg-(--accent-glow) border border-[color-mix(in_srgb,var(--color-accent)_30%,transparent)] flex items-center justify-center text-accent font-mono text-[14px] shrink-0">✗</div>
+					<div className="flex-1 text-[13px] text-muted2 leading-normal">
+						<strong className="text-text font-semibold">Coming next:</strong> a "Play This Hole" mode — input your handicap, pick a club, get an AI-caddie recommendation, and see your simulated outcome against the field.
 					</div>
-					<a href="#contact-section" className="btn btn-outline flex-shrink-0">
+					<a href="#contact-section" className="btn btn-outline shrink-0">
 						Follow Build <span className="arrow">→</span>
 					</a>
 				</motion.div>
