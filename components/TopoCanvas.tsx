@@ -86,7 +86,8 @@ export function TopoCanvas({ cols = 5, rows = 3, tileOpacity = 0.16 }: TopoCanva
 function TopoOverlaySVG() {
   return (
     <svg
-      className="absolute inset-0 w-full h-full z-[2] pointer-events-none"
+      className="absolute inset-0 w-full h-full pointer-events-none"
+      style={{ zIndex: 2 }}
       viewBox="0 0 1280 720"
       preserveAspectRatio="xMidYMid slice"
     >

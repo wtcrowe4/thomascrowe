@@ -178,5 +178,5 @@ export function NeuralCanvas({ nodeCount = 80 }: { nodeCount?: number }) {
 		};
 	}, [nodeCount]);
 
-	return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-[1]" />;
+	return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-1" />;
 }
