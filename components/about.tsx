@@ -23,6 +23,27 @@ export default function About() {
             building — v1 today, splat-based v2 down the road.
           </p>
         </div>
+
+        <div className="mt-16 rounded-3xl border border-border bg-surface/60 p-8 md:p-10">
+          <p className="font-mono text-xs tracking-widest text-accent mb-4">
+            ◉ AI WORKFLOWS FOR SMALL BUSINESS
+          </p>
+          <h3 className="text-2xl md:text-3xl font-semibold tracking-tight leading-tight text-balance max-w-3xl">
+            I&apos;m also building toward helping small and mid-size businesses in
+            Upstate SC adopt practical AI workflows.
+          </h3>
+          <p className="mt-4 text-lg text-muted max-w-3xl">
+            The idea is simple: use the new agentic tools, automation, and AI
+            systems to remove repetitive work, speed up decisions, and give
+            smaller teams leverage they usually only get from much larger orgs.
+          </p>
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 mt-6 text-accent hover:opacity-80 transition-opacity"
+          >
+            Talk through a workflow idea <span>→</span>
+          </a>
+        </div>
       </div>
     </section>
   );

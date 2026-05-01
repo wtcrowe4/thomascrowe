@@ -13,8 +13,14 @@ export default function Contact() {
           ◉ CONTACT
         </p>
         <h2 className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight text-balance max-w-3xl">
-          Got a data problem, a golf idea, or just want to talk splats?
+          Got an AI workflow, a data problem, a golf idea, or just want to talk splats?
         </h2>
+
+        <p className="mt-5 max-w-2xl text-lg text-muted">
+          If you&apos;re a small or mid-size business in Upstate SC and want to
+          see where automation, agents, and practical AI tools can remove busywork,
+          this is the place to start the conversation.
+        </p>
 
         <div className="mt-16 grid md:grid-cols-2 gap-px bg-border border border-border rounded-2xl overflow-hidden">
           {socials.map((s) => (

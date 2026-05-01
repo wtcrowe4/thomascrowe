@@ -27,9 +27,10 @@ export default function Nav() {
     >
       <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
         <a href="#top" className="font-mono text-sm tracking-tight">
-          <span className="text-accent">tc</span>
-          <span className="text-muted">/</span>
+          <span className="text-accent">&lt;thomas</span>
+          <span className="text-muted">.</span>
           <span>crowe</span>
+          <span className="text-muted"> /&gt;</span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted">
           {links.map((l) => (

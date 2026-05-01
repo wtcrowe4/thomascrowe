@@ -64,7 +64,7 @@ export function NeuralCanvas({ nodeCount = 80 }: { nodeCount?: number }) {
 		for (let i = 0; i < nodeCount; i++) {
 			const r = Math.random() < 0.2 ? 1.2 : Math.random() < 0.5 ? 0.6 : 0.35;
 			const geo = new THREE.SphereGeometry(r, 8, 8);
-			const mesh = new THREE.Mesh(geo, nodeMat.clone()) as NeuralNode;
+			const mesh = new THREE.Mesh(geo, nodeMat.clone()) as unknown as NeuralNode;
 			const theta = Math.random() * Math.PI * 2;
 			const phi = Math.acos(2 * Math.random() - 1);
 			const radius = 25 + Math.random() * 55;
@@ -96,7 +96,7 @@ export function NeuralCanvas({ nodeCount = 80 }: { nodeCount?: number }) {
 						nodes[i].position.clone(),
 						nodes[j].position.clone(),
 					]);
-					const line = new THREE.Line(geo, lineMat.clone()) as NeuralEdge;
+						const line = new THREE.Line(geo, lineMat.clone()) as unknown as NeuralEdge;
 					line.userData = { nodeA: i, nodeB: j };
 					scene.add(line);
 					edges.push(line);
@@ -109,7 +109,7 @@ export function NeuralCanvas({ nodeCount = 80 }: { nodeCount?: number }) {
 			.filter(() => Math.random() < 0.12)
 			.forEach((edge) => {
 				const geo = new THREE.SphereGeometry(0.35, 4, 4);
-				const pt = new THREE.Mesh(geo, ptMat.clone()) as NeuralParticle;
+				const pt = new THREE.Mesh(geo, ptMat.clone()) as unknown as NeuralParticle;
 				pt.userData = {
 					t: Math.random(),
 					speed: 0.003 + Math.random() * 0.005,

@@ -1,94 +1,119 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { TopoCanvas } from "./TopoCanvas";
 
-export default function Hero() {
-  return (
-    <section id="top" className="relative min-h-[100svh] overflow-hidden noise">
-      <div className="absolute inset-0 grid-bg opacity-60" />
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(70% 50% at 70% 20%, rgba(255,107,26,0.18) 0%, transparent 60%), radial-gradient(60% 60% at 10% 90%, rgba(34,211,238,0.12) 0%, transparent 60%)",
-        }}
-      />
+export function Hero() {
+	return (
+		<section
+			id="hero"
+			className="relative min-h-screen w-full flex items-center justify-center overflow-hidden"
+			style={{
+				background:
+					"radial-gradient(ellipse 100% 80% at 30% 110%, #0a1f3a 0%, #050f1f 60%, #03070f 100%)",
+			}}
+		>
+			<TopoCanvas tileOpacity={0.16} cols={7} rows={5} />
 
-      <div className="relative mx-auto max-w-7xl px-6 pt-40 pb-24">
-        <motion.p
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="font-mono text-xs tracking-widest text-accent mb-6"
-        >
-          ◉ AVAILABLE FOR WORK — Q2 2026
-        </motion.p>
+			<div
+				className="absolute inset-0 pointer-events-none z-[3]"
+				style={{
+					background:
+						"radial-gradient(ellipse 70% 55% at 50% 50%, transparent 20%, #03070f 95%)",
+				}}
+			/>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[0.95] text-balance"
-        >
-          Thomas Crowe.
-          <br />
-          <span className="text-muted">I turn data into </span>
-          <span className="text-accent">decisions</span>
-          <span className="text-muted">.</span>
-        </motion.h1>
+			<div
+				className="absolute inset-0 pointer-events-none z-[3]"
+				style={{
+					background:
+						"radial-gradient(ellipse 80% 40% at 50% 100%, rgba(251,146,60,0.07), transparent 60%)",
+				}}
+			/>
 
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
-          className="mt-8 max-w-2xl text-lg md:text-xl text-muted text-balance"
-        >
-          Metrology & calibration engineer by day. Building 3D golf analytics,
-          data pipelines, and cinematic web experiences in between rounds.
-        </motion.p>
+			<motion.div
+				initial={{ opacity: 0, y: 30 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+				className="relative z-[10] max-w-[1100px] px-12 text-center flex flex-col items-center gap-7"
+				style={{ color: "#e8eef8" }}
+			>
+				<div
+					className="font-mono text-[12px] tracking-[0.22em] uppercase flex items-center gap-3.5"
+					style={{ color: "var(--color-accent, #fb923c)" }}
+				>
+					<span
+						className="w-1.5 h-1.5 rounded-full"
+						style={{
+							background: "var(--color-accent, #fb923c)",
+							boxShadow: "0 0 10px var(--color-accent, #fb923c)",
+						}}
+					/>
+					Building AI workflows for Upstate SC businesses
+				</div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="mt-12 flex flex-wrap items-center gap-3"
-        >
-          <a
-            href="#golf"
-            className="group inline-flex items-center gap-2 px-5 py-3 rounded-full bg-accent text-black font-medium hover:bg-accent-soft transition-colors"
-          >
-            See the golf viz
-            <span className="transition-transform group-hover:translate-x-0.5">→</span>
-          </a>
-          <a
-            href="#projects"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-border text-text hover:bg-surface transition-colors"
-          >
-            Projects
-          </a>
-        </motion.div>
+				<h1
+					className="font-semibold leading-[1.05] tracking-[-0.04em]"
+					style={{ fontSize: "clamp(56px, 9vw, 132px)", paddingBottom: "0.12em" }}
+				>
+					Thomas <span className="serif-accent inline-block pr-[0.06em]">Crowe</span>
+				</h1>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.7 }}
-          className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl font-mono text-sm"
-        >
-          {[
-            ["07", "years in metrology"],
-            ["3DGS", "splat curious"],
-            ["∞", "rounds played"],
-            ["+1", "handicap goal"],
-          ].map(([stat, label]) => (
-            <div key={label} className="border-l border-border pl-4">
-              <div className="text-2xl text-text">{stat}</div>
-              <div className="text-muted text-xs uppercase tracking-wider mt-1">
-                {label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
+				<p
+					className="max-w-[580px] leading-[1.5]"
+					style={{
+						fontSize: "clamp(15px, 1.6vw, 19px)",
+						color: "rgba(232,238,248,0.78)",
+					}}
+				>
+					Full Stack Developer &amp; AI Engineer building intelligent systems where
+					software, data, and machine learning meet.
+				</p>
+
+				<div className="flex gap-3.5 mt-3 flex-wrap justify-center">
+					<a href="#projects" className="btn btn-primary">
+						View Selected Work <span className="arrow">→</span>
+					</a>
+					<a href="#contact" className="btn btn-outline">
+						Get in Touch
+					</a>
+				</div>
+			</motion.div>
+
+			<div
+				className="absolute bottom-8 left-0 right-0 flex justify-between items-end px-12 z-[10] font-mono text-[10px] tracking-[0.15em] uppercase"
+				style={{ color: "rgba(232,238,248,0.5)" }}
+			>
+				<div className="flex flex-col gap-1.5">
+					<div>Location</div>
+					<div
+						className="text-[12px] tracking-[0.05em] normal-case font-sans font-medium"
+						style={{ color: "#e8eef8" }}
+					>
+						Greenville, SC
+					</div>
+				</div>
+
+				<div
+					className="flex flex-col items-center gap-1 font-mono text-[10px] tracking-[0.14em]"
+					style={{ color: "var(--color-accent, #fb923c)", opacity: 0.8 }}
+				>
+					<div>34.8526° N · 82.3940° W</div>
+					<div style={{ color: "rgba(232,238,248,0.4)" }}>
+						Topo lines in progress
+					</div>
+				</div>
+
+				<div className="flex flex-col gap-1.5 text-right">
+					<div>Status</div>
+					<div
+						className="text-[12px] tracking-[0.05em] normal-case font-sans font-medium"
+						style={{ color: "#e8eef8" }}
+					>
+						Available for Consulting
+					</div>
+				</div>
+			</div>
+		</section>
+	);
 }

@@ -1,5 +1,5 @@
 import Nav from "@/components/nav";
-import Hero from "@/components/hero";
+import { Hero } from "@/components/hero";
 import { Ticker } from "@/components/Ticker";
 import About from "@/components/about";
 import Projects from "@/components/projects";
