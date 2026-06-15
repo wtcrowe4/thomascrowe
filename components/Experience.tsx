@@ -5,25 +5,25 @@ import { motion } from "framer-motion";
 
 const items = [
 	{
-		period: "2022 — Present",
-		role: "Full Stack Developer & AI Engineer",
-		company: "Fastec Services / Calibration Wands",
-		desc: "Building and maintaining production web platforms, integrating AI workflows, and delivering full-stack solutions. Responsible for the full product lifecycle at calibrationwands.com — frontend, backend API, infrastructure, and AI-assisted internal tooling.",
-		tags: ["Custom Wordpress/Woocommerce","React", "Node", "Google Cloud", "LLMs", "RAG",  ],
+		period: "Feb 2024 — Present",
+		role: "Technical Operations Lead, CalibrationWands.com",
+		company: "Fastec Services LLC",
+		desc: "Sole technical operator for CalibrationWands.com — all development, infrastructure, and integrations for a B2B WooCommerce store serving food, pharmaceutical, and textile manufacturers. Migrated the production store to Cloudways/DigitalOcean with zero data loss; built Test Standards Hub, an internal platform unifying WooCommerce + QuickBooks order tracking that generates calibration certificates and SVG engraving files driven straight to our CNC machine. Deployed an ERPNext instance via a Python migration pipeline (4,720 products, 2,852 customers) and an LLM agent that auto-maps customer purchase orders to catalog SKUs. Recovered 1,534 corrupted WooCommerce order numbers via forensic SQL and shipped custom SKU-configurator JavaScript across 10 product lines.",
+		tags: ["WooCommerce", "React", "Node", "ERPNext", "LLMs", "Ollama", "Stripe", "Docker"],
 	},
 	{
-		period: "2019 — 2022",
-		role: "Software Engineer",
-		company: "Indepedent / Freelance",
-		desc: "Full stack development across web applications. Shipped features end-to-end using React, Node.js, and cloud infrastructure. Started exploring ML integration in smaller systems. Experiments included many project in .NET MAUI for cross-platform mobile/desktop apps.",
-		tags: ["React", "Node", "Postgres", "AWS", ".NET MAUI"]
+		period: "Feb 2022 — Dec 2022",
+		role: "Full Stack Web Development",
+		company: "North Carolina State University",
+		desc: "Intensive full-stack program covering the modern web stack end-to-end — HTML/CSS/SCSS, JavaScript/TypeScript, Node, Express, Python, Flask, Django, and C#/.NET, with React, Angular, Svelte, Redux, Tailwind, and Bootstrap on the frontend. Built and deployed projects against MongoDB, PostgreSQL, and SQL using Git, Heroku, and AWS.",
+		tags: ["TypeScript", "React", "Node", "Python", "PostgreSQL", "AWS"],
 	},
 	{
-		period: "2015 — 2019",
-		role: "Junior Developer",
-		company: "Early Career",
-		desc: "Sharpened fundamentals — frontend interfaces, databases, deployment. Built a deep affection for clean, efficient code and the engineers who write it.",
-		tags: ["JavaScript", "SQL", "SCSS", "Linux", "Python"],
+		period: "Prior to 2022",
+		role: "Operations & Management",
+		company: "Hospitality & Retail",
+		desc: "Years of operations leadership before pivoting to engineering — managing teams, budgets, and inventory under pressure. The foundation for thriving in fast-paced, high-stakes environments.",
+		tags: ["Operations", "Team Leadership", "Problem Solving"],
 	},
 ];
 
