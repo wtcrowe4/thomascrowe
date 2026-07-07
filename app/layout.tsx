@@ -1,10 +1,26 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const description =
+  "Self-taught full-stack developer and technical ops lead in Greenville, SC. Production LLM agents, e-commerce infrastructure, and browser-native 3D.";
+
 export const metadata: Metadata = {
-  title: "Thomas Crowe — Full Stack Developer & AI Engineer",
-  description:
-    "Full Stack Developer & AI Engineer building intelligent systems where software, data, and machine learning meet.",
+  metadataBase: new URL("https://thomascrowe.netlify.app"),
+  title: "Thomas Crowe — Full-Stack Developer & LLM Engineer",
+  description,
+  openGraph: {
+    title: "Thomas Crowe — Full-Stack Developer & LLM Engineer",
+    description,
+    url: "/",
+    siteName: "Thomas Crowe",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Thomas Crowe — Full-Stack Developer & LLM Engineer",
+    description,
+  },
 };
 
 export default function RootLayout({

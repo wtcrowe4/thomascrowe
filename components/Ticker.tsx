@@ -1,16 +1,18 @@
 const items = [
-	"PYTHON",
 	"TYPESCRIPT",
 	"REACT",
-	"LANGCHAIN",
-	"RAG",
-	"AWS",
-	"POSTGRES",
 	"NEXT.JS",
-	"UNITY",
 	"THREE.JS",
+	"LANGGRAPH",
+	"OLLAMA",
+	"VLLM",
+	"PGVECTOR",
+	"POSTGRES",
+	"NODE.JS",
+	"PYTHON",
+	"CLOUDFLARE",
 	"DOCKER",
-	"LLMs",
+	"ERPNEXT",
 ];
 
 export function Ticker() {

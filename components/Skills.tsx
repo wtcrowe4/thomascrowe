@@ -4,43 +4,40 @@ import { motion } from "framer-motion";
 
 const categories = [
 	{
-		title: "AI / ML",
+		title: "LLM / Agents",
 		num: "/01",
 		items: [
-			["LLM Integration", 0.92],
-			["LangChain / RAG", 0.88],
-			["Python / Pandas", 0.9],
-			["Prompt Engineering", 0.85],
+			"LangGraph",
+			"Ollama",
+			"vLLM",
+			"pgvector",
+			"Langfuse",
+			"Unsloth",
+			"AWQ / GPTQ",
+			"Claude Code",
 		],
 	},
 	{
 		title: "Frontend",
 		num: "/02",
-		items: [
-			["React / Next.js", 0.9],
-			["TypeScript", 0.85],
-			["Three.js / WebGL", 0.72],
-			["CSS / Design Systems", 0.82],
-		],
+		items: ["React", "Next.js 16", "TypeScript", "Three.js / R3F", "Tailwind v4"],
 	},
 	{
-		title: "Backend",
+		title: "Backend / Data",
 		num: "/03",
-		items: [
-			["Node.js / Express", 0.85],
-			["Python APIs (FastAPI)", 0.88],
-			["PostgreSQL", 0.82],
-			["REST / GraphQL", 0.8],
-		],
+		items: ["Node.js", "Express", "Python", "PHP", "PostgreSQL", "ERPNext"],
 	},
 	{
-		title: "Infra / Cloud",
+		title: "Infra",
 		num: "/04",
 		items: [
-			["AWS", 0.82],
-			["Docker", 0.78],
-			["CI/CD Pipelines", 0.78],
-			["Terraform", 0.65],
+			"Cloudflare",
+			"Oracle Cloud",
+			"DigitalOcean",
+			"Cloudways",
+			"Docker",
+			"WSL",
+			"Tailscale",
 		],
 	},
 ] as const;
@@ -62,7 +59,8 @@ export function Skills() {
 							Tools of the <span className="serif-accent">trade</span>
 						</h2>
 						<p className="text-[14px] leading-[1.7] text-[var(--color-muted2)] max-w-[640px] mt-3">
-							Across the full spectrum — intelligent backends, polished frontends, and cloud-native infrastructure.
+							The stack I actually ship with — every tool here is running in
+							production today.
 						</p>
 					</motion.div>
 					<div className="grid sm:grid-cols-2 gap-px bg-[var(--color-border)] border border-[var(--color-border)]">
@@ -79,20 +77,11 @@ export function Skills() {
 									<span>{cat.title}</span>
 									<span className="text-[var(--color-muted)]">{cat.num}</span>
 								</div>
-								<div className="flex flex-col gap-2.5">
-									{cat.items.map(([name, pct]) => (
-										<div key={name} className="flex items-center justify-between text-[13px]">
-											<span className="text-[var(--color-text)]">{name}</span>
-											<div className="flex-1 max-w-[80px] h-[2px] bg-[var(--color-border)] ml-4 relative overflow-hidden">
-												<motion.div
-													initial={{ scaleX: 0 }}
-													whileInView={{ scaleX: pct }}
-													viewport={{ once: true, amount: 0.5 }}
-													transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
-													className="h-full bg-[var(--color-accent)] origin-left"
-												/>
-											</div>
-										</div>
+								<div className="flex flex-wrap gap-2">
+									{cat.items.map((name) => (
+										<span key={name} className="tag">
+											{name}
+										</span>
 									))}
 								</div>
 							</motion.div>

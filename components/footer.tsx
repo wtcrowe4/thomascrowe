@@ -5,7 +5,7 @@ export default function Footer() {
         <div>© {new Date().getFullYear()} Thomas Crowe · Built w/ Next.js + R3F</div>
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-          <span>v0.1 — design prototype</span>
+          <span>Open to full-time &amp; consulting · Greenville, SC</span>
         </div>
       </div>
     </footer>

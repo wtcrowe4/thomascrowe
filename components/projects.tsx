@@ -1,33 +1,87 @@
-const projects = [
+type Project = {
+  title: string;
+  blurb: string;
+  tags: string[];
+  link: string | null;
+  note?: string;
+  flagship: boolean;
+};
+
+const projects: Project[] = [
   {
-    title: "Sawgrass 17 — Shot Tracer Viz",
+    title: "Sawgrass 17 — 3D Shot Tracers",
     blurb:
-      "Browser-native broadcast-style shot tracers + Gaussian-heatmap minimap over the 17th at TPC Sawgrass. The piece you just scrolled past.",
-    tags: ["Three.js", "R3F", "DataGolf", "Canvas"],
+      "Broadcast-style shot tracers over the island-green 17th at TPC Sawgrass — a React Three Fiber scene with a 2D overhead heatmap and per-shot stats panel, running entirely in the browser. No game engine. Live below.",
+    tags: ["Three.js", "React Three Fiber", "Next.js 16", "WebGL"],
     link: "#golf",
+    flagship: true,
   },
   {
-    title: "Unity Golf — YouTube Build",
+    title: "TSH — Certificate & Engraving Automation",
     blurb:
-      "Ongoing Unity project pairing Google Maps Photorealistic 3D Tiles with playable hole logic for a YouTube series.",
-    tags: ["Unity", "Google Maps API", "C#"],
-    link: "#",
+      "Node.js/Express automation system built for CalibrationWands: calibration-certificate PDFs with pyHanko cryptographic signing (tamper-evident), engraving SVG automation, and invoice templates. Eliminated ~260 hours of manual certificate production. Runs on Oracle Cloud A1 (ARM) behind a Cloudflare Tunnel.",
+    tags: ["Node.js", "Express", "pyHanko", "Oracle Cloud", "Cloudflare"],
+    link: null,
+    note: "Internal · in production",
+    flagship: false,
   },
   {
-    title: "Calibration Workflow Tools",
+    title: "CalibrationWands.com",
     blurb:
-      "Internal pipelines that turn raw metrology logs into cert-ready reports — shaving hours off every batch.",
-    tags: ["Python", "Pandas", "Automation"],
-    link: "#",
-  },
-  {
-    title: "AI Caddie (planned)",
-    blurb:
-      "Claude-powered club-selection caddie. Ingests lie, distance, wind, personal dispersion — returns a recommendation and a reason.",
-    tags: ["Claude API", "Next.js", "Edge"],
-    link: "#",
+      "B2B storefront for NIST-traceable metal detector and X-ray test standards — a division of Fastec Services LLC. Sole full-stack dev and technical ops lead: custom UPS shipping plugin, SKU configurator engine, EPO pricing, Bedrock WordPress, ERPNext v16, and a zero-downtime host migration across Cloudways, DigitalOcean, and Cloudflare.",
+    tags: ["WordPress / Bedrock", "WooCommerce", "ERPNext", "PHP", "Infra"],
+    link: "https://calibrationwands.com",
+    flagship: false,
   },
 ];
+
+function Card({ p }: { p: Project }) {
+  const inner = (
+    <>
+      <div className="flex items-start justify-between gap-4">
+        <h3 className="text-xl font-medium tracking-tight">{p.title}</h3>
+        {p.link ? (
+          <span className="text-muted group-hover:text-accent transition-colors">
+            ↗
+          </span>
+        ) : (
+          <span className="font-mono text-[10px] uppercase tracking-wider text-muted whitespace-nowrap mt-1.5">
+            {p.note}
+          </span>
+        )}
+      </div>
+      <p className="text-muted text-sm leading-relaxed flex-1">{p.blurb}</p>
+      <div className="flex flex-wrap gap-2 mt-auto">
+        {p.tags.map((t) => (
+          <span
+            key={t}
+            className="font-mono text-[10px] uppercase tracking-wider px-2 py-1 rounded bg-surface border border-border text-muted"
+          >
+            {t}
+          </span>
+        ))}
+      </div>
+    </>
+  );
+
+  const className = `group bg-bg hover:bg-surface transition-colors p-8 flex flex-col gap-4 min-h-[240px] ${
+    p.flagship ? "md:col-span-2" : ""
+  }`;
+
+  if (!p.link) {
+    return <div className={className}>{inner}</div>;
+  }
+  return (
+    <a
+      href={p.link}
+      target={p.link.startsWith("http") ? "_blank" : undefined}
+      rel={p.link.startsWith("http") ? "noreferrer" : undefined}
+      className={className}
+    >
+      {inner}
+    </a>
+  );
+}
 
 export default function Projects() {
   return (
@@ -37,38 +91,12 @@ export default function Projects() {
           ◉ SELECTED WORK
         </p>
         <h2 className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight text-balance max-w-3xl">
-          A few things worth pointing at.
+          Real systems, in production.
         </h2>
 
         <div className="mt-16 grid md:grid-cols-2 gap-px bg-border border border-border rounded-2xl overflow-hidden">
           {projects.map((p) => (
-            <a
-              key={p.title}
-              href={p.link}
-              className="group bg-bg hover:bg-surface transition-colors p-8 flex flex-col gap-4 min-h-[240px]"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <h3 className="text-xl font-medium tracking-tight">
-                  {p.title}
-                </h3>
-                <span className="text-muted group-hover:text-accent transition-colors">
-                  ↗
-                </span>
-              </div>
-              <p className="text-muted text-sm leading-relaxed flex-1">
-                {p.blurb}
-              </p>
-              <div className="flex flex-wrap gap-2 mt-auto">
-                {p.tags.map((t) => (
-                  <span
-                    key={t}
-                    className="font-mono text-[10px] uppercase tracking-wider px-2 py-1 rounded bg-surface border border-border text-muted"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </a>
+            <Card key={p.title} p={p} />
           ))}
         </div>
       </div>

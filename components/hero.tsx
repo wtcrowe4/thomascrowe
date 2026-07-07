@@ -51,7 +51,7 @@ export function Hero() {
 							boxShadow: "0 0 10px var(--color-accent, #fb923c)",
 						}}
 					/>
-					Building AI workflows for Upstate SC businesses
+					Full-Stack Developer · LLM &amp; Agent Engineering
 				</div>
 
 				<h1
@@ -70,8 +70,9 @@ export function Hero() {
 						lineHeight: 1.5,
 					}}
 				>
-					Full Stack Developer &amp; AI Engineer building intelligent systems where
-					software, data, and machine learning meet.
+					Self-taught full-stack developer and technical ops lead. I ship
+					production LLM agents, e-commerce infrastructure, and browser-native
+					3D — end to end, solo.
 				</p>
 
 				<div className="flex gap-3.5 mt-3 flex-wrap justify-center">
@@ -103,9 +104,6 @@ export function Hero() {
 					style={{ color: "var(--color-accent, #fb923c)", opacity: 0.8 }}
 				>
 					<div>34.8526° N · 82.3940° W</div>
-					<div style={{ color: "rgba(232,238,248,0.4)" }}>
-						Topo lines in progress
-					</div>
 				</div>
 
 				<div className="flex flex-col gap-1.5 text-right">
@@ -114,7 +112,7 @@ export function Hero() {
 						className="text-[12px] normal-case font-sans font-medium"
 						style={{ color: "#e8eef8", letterSpacing: "0.05em" }}
 					>
-						Available for Consulting
+						Open to Full-Time &amp; Consulting
 					</div>
 				</div>
 			</div>
