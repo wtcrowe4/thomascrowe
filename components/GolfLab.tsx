@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export function GolfLab() {
 	return (
 		<div
-			id="golf-section"
+			id="golf"
 			className="py-35 relative overflow-hidden border-y border-border bg-bg2"
 		>
 			<div
@@ -78,15 +78,15 @@ export function GolfLab() {
 							</svg>
 							<div className="relative text-center flex flex-col items-center gap-5 max-w-105 px-10">
 								<div className="w-16 h-16 border border-accent flex items-center justify-center text-accent font-mono text-[14px]">⛳</div>
-								<div className="font-mono text-[10px] text-accent tracking-[0.25em] uppercase">Section · 3D Splat View</div>
+								<div className="font-mono text-[10px] text-accent tracking-[0.25em] uppercase">Roadmap · Splat View (v2)</div>
 								<div className="text-[24px] font-semibold tracking-[-0.02em]">
 									Gaussian splat of Hole 17<br />+ live shot tracers
 								</div>
 								<div className="text-[13px] text-muted2 leading-[1.7]">
-									In-world fly-through with PGA Tour shot data layered as glowing arcs. Click any tracer to see the player, distance, and outcome. Coming with the splat capture.
+									In-world fly-through with shot data layered as glowing arcs. Click any tracer to see the player, distance, and outcome. Coming with the splat capture.
 								</div>
 								<div className="flex gap-2 mt-2">
-									{["Three.js", "3DGS", "ShotLink", "v2"].map((t) => (
+									{["Three.js", "3DGS", "v2"].map((t) => (
 										<span key={t} className="tag">{t}</span>
 									))}
 								</div>
@@ -106,7 +106,7 @@ export function GolfLab() {
 								Overhead · Heatmap
 							</span>
 							<span className="absolute top-3.5 right-4 font-mono text-[9px] text-muted tracking-widest bg-surface border border-border px-2 py-0.5 z-3">
-								Google Maps API
+								Preview
 							</span>
 							<svg viewBox="0 0 400 400" className="absolute inset-0 w-full h-full">
 								<rect width="400" height="400" fill="#0a1628" />
@@ -175,21 +175,6 @@ export function GolfLab() {
 					</div>
 				</div>
 
-				<motion.div
-					initial={{ opacity: 0, y: 28 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, amount: 0.1 }}
-					transition={{ duration: 0.8, delay: 0.3 }}
-					className="mt-8 flex flex-col md:flex-row gap-4 items-start md:items-center px-6 py-5 bg-bg border border-border"
-				>
-					<div className="w-9 h-9 bg-(--accent-glow) border border-[color-mix(in_srgb,var(--color-accent)_30%,transparent)] flex items-center justify-center text-accent font-mono text-[14px] shrink-0">✗</div>
-					<div className="flex-1 text-[13px] text-muted2 leading-normal">
-						<strong className="text-text font-semibold">Coming next:</strong> a "Play This Hole" mode — input your handicap, pick a club, get an AI-caddie recommendation, and see your simulated outcome against the field.
-					</div>
-					<a href="#contact-section" className="btn btn-outline shrink-0">
-						Follow Build <span className="arrow">→</span>
-					</a>
-				</motion.div>
 			</section>
 		</div>
 	);

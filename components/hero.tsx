@@ -51,7 +51,7 @@ export function Hero() {
 							boxShadow: "0 0 10px var(--color-accent, #fb923c)",
 						}}
 					/>
-					Full-Stack Developer · LLM &amp; Agent Engineering
+					Building AI workflows for Upstate SC businesses
 				</div>
 
 				<h1
@@ -70,9 +70,9 @@ export function Hero() {
 						lineHeight: 1.5,
 					}}
 				>
-					Self-taught full-stack developer and technical ops lead. I ship
-					production LLM agents, e-commerce infrastructure, and browser-native
-					3D — end to end, solo.
+					Full-stack developer and technical ops lead. I ship production LLM
+					agents, e-commerce infrastructure, and browser-native 3D — end to
+					end, solo.
 				</p>
 
 				<div className="flex gap-3.5 mt-3 flex-wrap justify-center">

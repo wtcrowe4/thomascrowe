@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 const description =
-  "Self-taught full-stack developer and technical ops lead in Greenville, SC. Production LLM agents, e-commerce infrastructure, and browser-native 3D.";
+  "Full-stack developer and technical ops lead in Greenville, SC. Production LLM agents, e-commerce infrastructure, and browser-native 3D.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://thomascrowe.netlify.app"),
