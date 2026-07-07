@@ -71,8 +71,8 @@ export function Hero() {
 					}}
 				>
 					Full-stack developer and technical ops lead. I ship production LLM
-					agents, e-commerce infrastructure, and browser-native 3D — end to
-					end, solo.
+					agents, e-commerce infrastructure, and browser-native 3D — from the
+					storefront to the GPU.
 				</p>
 
 				<div className="flex gap-3.5 mt-3 flex-wrap justify-center">

@@ -62,7 +62,7 @@ export default function OpenGraphImage() {
           }}
         >
           Production LLM agents, e-commerce infrastructure, and browser-native
-          3D — end to end, solo.
+          3D — from the storefront to the GPU.
         </div>
         <div
           style={{

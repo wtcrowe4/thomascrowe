@@ -6,7 +6,7 @@ export default function About() {
           ◉ ABOUT
         </p>
         <h2 className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight text-balance max-w-3xl">
-          One engineer, the whole stack — from the storefront to the GPU.
+          One engineer, the whole stack.
         </h2>
         <div className="mt-12 grid md:grid-cols-2 gap-12 text-lg text-muted">
           <p>
@@ -18,8 +18,8 @@ export default function About() {
             running.
           </p>
           <p>
-            Working solo shapes how I build: small systems, few dependencies,
-            automation wherever it pays for itself. Lately most of that
+            Owning the whole stack shapes how I build: small systems, few
+            dependencies, automation wherever it pays for itself. Lately most of that
             leverage comes from LLMs — production agents parsing purchase
             orders, open models fine-tuned and served on my own hardware, and
             enough observability to actually trust the output.
