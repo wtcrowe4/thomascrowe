@@ -1,6 +1,12 @@
 const socials = [
   {
-    label: "Email",
+    label: "Email · Hiring",
+    href: "mailto:wtcrowe4@outlook.com",
+    handle: "wtcrowe4@outlook.com",
+    primary: true,
+  },
+  {
+    label: "Email · Consulting",
     href: "mailto:Thomas@fastecservices.com",
     handle: "Thomas@fastecservices.com",
   },
@@ -45,7 +51,9 @@ export default function Contact() {
               href={s.href}
               target={s.href.startsWith("http") ? "_blank" : undefined}
               rel="noreferrer"
-              className="group bg-bg hover:bg-surface transition-colors p-8 flex items-center justify-between gap-4"
+              className={`group bg-bg hover:bg-surface transition-colors p-8 flex items-center justify-between gap-4 ${
+                "primary" in s && s.primary ? "md:col-span-2" : ""
+              }`}
             >
               <div>
                 <div className="font-mono text-xs uppercase tracking-widest text-muted mb-2">
