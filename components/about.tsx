@@ -6,22 +6,21 @@ export default function About() {
           ◉ ABOUT
         </p>
         <h2 className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight text-balance max-w-3xl">
-          One engineer, the whole stack.
+          Full-stack ownership of a production business.
         </h2>
         <div className="mt-12 grid md:grid-cols-2 gap-12 text-lg text-muted">
           <p>
-            I&apos;m the sole technical operator behind CalibrationWands.com, a
-            division of Fastec Services LLC selling NIST-traceable test
-            standards for metal detectors and X-ray systems. Storefront,
-            shipping and pricing logic, ERP, certificate automation,
-            infrastructure — if it&apos;s technical, I built it and I keep it
-            running.
+            I&apos;m the technical lead for CalibrationWands.com, a division of
+            Fastec Services LLC selling NIST-traceable test standards for
+            metal detectors and X-ray systems. Storefront, shipping and
+            pricing logic, ERP, certificate automation, infrastructure —
+            I&apos;m responsible for all of it, end to end.
           </p>
           <p>
-            Owning the whole stack shapes how I build: small systems, few
-            dependencies, automation wherever it pays for itself. Lately most of that
+            That end-to-end responsibility shapes how I build: small systems,
+            few dependencies, automation wherever it pays for itself. Lately most of that
             leverage comes from LLMs — production agents parsing purchase
-            orders, open models fine-tuned and served on my own hardware, and
+            orders, open models fine-tuned and served on self-hosted hardware, and
             enough observability to actually trust the output.
           </p>
         </div>

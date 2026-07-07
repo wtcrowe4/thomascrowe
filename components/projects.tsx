@@ -28,7 +28,7 @@ const projects: Project[] = [
   {
     title: "CalibrationWands.com",
     blurb:
-      "B2B storefront for NIST-traceable metal detector and X-ray test standards — a division of Fastec Services LLC. Sole full-stack dev and technical ops lead: custom UPS shipping plugin, SKU configurator engine, EPO pricing, Bedrock WordPress, ERPNext v16, and a zero-downtime host migration across Cloudways, DigitalOcean, and Cloudflare.",
+      "B2B storefront for NIST-traceable metal detector and X-ray test standards — a division of Fastec Services LLC. Full-stack development and technical operations: custom UPS shipping plugin, SKU configurator engine, EPO pricing, Bedrock WordPress, ERPNext v16, and a zero-downtime host migration across Cloudways, DigitalOcean, and Cloudflare.",
     tags: ["WordPress / Bedrock", "WooCommerce", "ERPNext", "PHP", "Infra"],
     link: "https://calibrationwands.com",
     flagship: false,

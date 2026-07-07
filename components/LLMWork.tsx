@@ -17,7 +17,7 @@ const showcases = [
   },
   {
     title: "Self-hosted agent rig",
-    desc: "A local GPU workstation running multi-agent orchestration end to end: Slack-integrated assistants (Socket Mode, DM-only, allowlisted) and scheduled automations — all models and data staying on hardware I control.",
+    desc: "A local GPU workstation running multi-agent orchestration end to end: Slack-integrated assistants (Socket Mode, DM-only, allowlisted) and scheduled automations — with all models and data staying on self-hosted hardware.",
     stack: [
       ["Compute", "Local GPU workstation"],
       ["Orchestration", "Multi-agent workflows"],
