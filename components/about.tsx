@@ -10,14 +10,15 @@ export default function About() {
         </h2>
         <div className="mt-12 grid md:grid-cols-2 gap-12 text-lg text-muted">
           <p>
-            I&apos;m the technical lead for CalibrationWands.com, a division of
-            Fastec Services LLC selling NIST-traceable test standards for
-            metal detectors and X-ray systems. Storefront, shipping and
-            pricing logic, ERP, certificate automation, infrastructure —
-            I&apos;m responsible for all of it, end to end.
+            I&apos;m the sole engineer and technical lead for
+            CalibrationWands.com, a division of Fastec Services LLC selling
+            NIST-traceable test standards for metal detectors and X-ray
+            systems. Storefront, shipping and pricing logic, ERP, certificate
+            automation, infrastructure — I&apos;m responsible for all of it,
+            end to end.
           </p>
           <p>
-            That end-to-end responsibility shapes how I build: small systems,
+            That end-to-end responsibility shapes how I build: lean systems,
             few dependencies, automation wherever it pays for itself. Lately most of that
             leverage comes from LLMs — production agents parsing purchase
             orders, open models fine-tuned and served on self-hosted hardware, and
