@@ -27,17 +27,17 @@ export function GolfLab() {
 						<div className="eyebrow"><span className="num">03 /</span> Golf Lab · Where data meets fairways</div>
 						<h2 className="font-semibold tracking-[-0.02em] leading-[0.98] mb-7" style={{ fontSize: "clamp(40px, 5.2vw, 72px)" }}>
 							The 17th at <span className="serif-accent">Sawgrass</span>.<br />
-							Stats meet the splat.
+							Every shot, traced.
 						</h2>
 						<p className="text-[17px] leading-[1.7] text-muted2 max-w-160 mt-5">
-							A live data canvas overlaying PGA Tour shot data on an ultra-realistic Gaussian splat of the most famous par-3 in golf. Heatmaps, shot tracers, strokes-gained breakdowns — and an AI caddie waiting in the wings.
+							A live data canvas over a 3D scene of the most famous par-3 in golf — broadcast-style shot tracers, an overhead heatmap, and strokes-gained breakdowns, all rendered in the browser.
 						</p>
 					</div>
 					<div className="flex flex-col gap-1.5 font-mono text-[11px] text-muted tracking-widest lg:text-right">
 						<div>HOLE 17 · PAR 3 · 137 YDS</div>
 						<div className="text-accent text-[14px]">TPC SAWGRASS</div>
-						<div className="mt-3">Data: PGA Tour ShotLink</div>
-						<div>Render: Three.js + 3DGS</div>
+						<div className="mt-3">Data: Illustrative · v1</div>
+						<div>Render: Three.js / R3F</div>
 					</div>
 				</motion.div>
 
