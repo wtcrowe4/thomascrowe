@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 const items = [
 	{
 		period: "Feb 2024 — Present",
-		role: "Technical Operations Lead, CalibrationWands.com",
-		company: "Fastec Services LLC",
-		desc: "Sole technical operator for CalibrationWands.com — all development, infrastructure, and integrations for a B2B WooCommerce store serving food, pharmaceutical, and textile manufacturers. Migrated the production store to Cloudways/DigitalOcean with zero data loss; built Test Standards Hub, an internal platform unifying WooCommerce + QuickBooks order tracking that generates calibration certificates and SVG engraving files driven straight to our CNC machine. Deployed an ERPNext instance via a Python migration pipeline (4,720 products, 2,852 customers) and an LLM agent that auto-maps customer purchase orders to catalog SKUs. Recovered 1,534 corrupted WooCommerce order numbers via forensic SQL and shipped custom SKU-configurator JavaScript across 10 product lines.",
-		tags: ["WooCommerce", "React", "Node", "ERPNext", "LLMs", "Ollama", "Stripe", "Docker"],
+		role: "Full-Stack Developer & Technical Operations Lead",
+		company: "CalibrationWands.com (Fastec Services LLC)",
+		desc: "Build and operate the technical stack for a B2B manufacturer of NIST-traceable test standards serving food, pharmaceutical, and textile quality-control customers. Built Test Standards Hub (React/Vite, Express, Prisma/PostgreSQL), which turns WooCommerce orders into certificates, engraving SVGs, and CNC-ready STL files: 3,800+ certificates auto-generated, ~450 hours of manual document work eliminated. Integrated QuickBooks Desktop and Zoho Inventory with verified, reversible writes; put an LLM intake pipeline with human approval in front of emailed purchase orders; migrated the live store to dedicated DigitalOcean hosting with zero downtime; and run GitLab CI/CD with health-checked deploys, error tracking, and alerting.",
+		tags: ["React", "Node/Express", "PostgreSQL", "WooCommerce", "QuickBooks", "GitLab CI", "Docker", "LLMs"],
 	},
 	{
 		period: "Feb 2022 — Dec 2022",
-		role: "Full Stack Web Development",
+		role: "Software Development Program",
 		company: "North Carolina State University",
 		desc: "Intensive full-stack program covering the modern web stack end-to-end — HTML/CSS/SCSS, JavaScript/TypeScript, Node, Express, Python, Flask, Django, and C#/.NET, with React, Angular, Svelte, Redux, Tailwind, and Bootstrap on the frontend. Built and deployed projects against MongoDB, PostgreSQL, and SQL using Git, Heroku, and AWS.",
 		tags: ["TypeScript", "React", "Node", "Python", "PostgreSQL", "AWS"],
@@ -22,7 +22,7 @@ const items = [
 		period: "Prior to 2022",
 		role: "Operations & Management",
 		company: "Hospitality & Retail",
-		desc: "Years of operations leadership before pivoting to engineering — managing teams, budgets, and inventory under pressure. The foundation for thriving in fast-paced, high-stakes environments.",
+		desc: "Eight years running a high-volume business before moving into engineering — managing teams, budgets, and inventory under pressure. It is why I build with the operator's problem in mind.",
 		tags: ["Operations", "Team Leadership", "Problem Solving"],
 	},
 ];

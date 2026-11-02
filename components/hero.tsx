@@ -51,7 +51,7 @@ export function Hero() {
 							boxShadow: "0 0 10px var(--color-accent, #fb923c)",
 						}}
 					/>
-					Building AI workflows for Upstate SC businesses
+					Full-Stack Developer & Technical Operations Lead
 				</div>
 
 				<h1
@@ -107,12 +107,12 @@ export function Hero() {
 				</div>
 
 				<div className="flex flex-col gap-1.5 text-right">
-					<div>Status</div>
+					<div>Focus</div>
 					<div
 						className="text-[12px] normal-case font-sans font-medium"
 						style={{ color: "#e8eef8", letterSpacing: "0.05em" }}
 					>
-						Open to Full-Time &amp; Consulting
+						Full-Stack · Platform · AI
 					</div>
 				</div>
 			</div>

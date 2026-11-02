@@ -12,7 +12,8 @@ const items = [
 	"PYTHON",
 	"CLOUDFLARE",
 	"DOCKER",
-	"ERPNEXT",
+	"GITLAB CI",
+	"QUICKBOOKS API",
 ];
 
 export function Ticker() {

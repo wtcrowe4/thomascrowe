@@ -1,14 +1,9 @@
 const socials = [
   {
-    label: "Email · Hiring",
+    label: "Email",
     href: "mailto:wtcrowe4@outlook.com",
     handle: "wtcrowe4@outlook.com",
     primary: true,
-  },
-  {
-    label: "Email · Consulting",
-    href: "mailto:Thomas@fastecservices.com",
-    handle: "Thomas@fastecservices.com",
   },
   {
     label: "GitHub",
@@ -35,13 +30,12 @@ export default function Contact() {
           ◉ CONTACT
         </p>
         <h2 className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight text-balance max-w-3xl">
-          Hiring, consulting, or curious how the tracers work?
+          Want to talk shop, or curious how the tracers work?
         </h2>
 
         <p className="mt-5 max-w-2xl text-lg text-muted">
-          I&apos;m open to full-time engineering roles and consulting work. If
-          you&apos;re a small or mid-size business that wants practical
-          automation — agents, integrations, less busywork — same inbox.
+          Email is the best way to reach me. Happy to talk through any of
+          the work above — integrations, platform, agents, or golf data.
         </p>
 
         <div className="mt-16 grid md:grid-cols-2 gap-px bg-border border border-border rounded-2xl overflow-hidden">

@@ -17,10 +17,10 @@ const projects: Project[] = [
     flagship: true,
   },
   {
-    title: "TSH — Certificate & Engraving Automation",
+    title: "Test Standards Hub — Order-to-Manufacturing Platform",
     blurb:
-      "Node.js/Express automation system built for CalibrationWands: calibration-certificate PDFs with pyHanko cryptographic signing (tamper-evident), engraving SVG automation, and invoice templates. Eliminated ~260 hours of manual certificate production. Runs on Oracle Cloud A1 (ARM) behind a Cloudflare Tunnel.",
-    tags: ["Node.js", "Express", "pyHanko", "Oracle Cloud", "Cloudflare"],
+      "Internal full-stack platform that turns WooCommerce orders into manufacturing outputs: 3,800+ auto-generated NIST-traceable certificates (~450 hours of manual document work eliminated), engraving SVGs, and STL files for the CNC. Certificates are generated through Adobe PDF Services, AES-256 locked, and signed with pyHanko for tamper-evident verification. Tested with Vitest and Supertest, deployed through GitLab CI.",
+    tags: ["React/Vite", "Express", "Prisma/PostgreSQL", "Adobe PDF Services", "GitLab CI"],
     link: null,
     note: "Internal · in production",
     flagship: false,
@@ -28,8 +28,8 @@ const projects: Project[] = [
   {
     title: "CalibrationWands.com",
     blurb:
-      "B2B storefront for NIST-traceable metal detector and X-ray test standards — a division of Fastec Services LLC. Full-stack development and technical operations: custom UPS shipping plugin, SKU configurator engine, EPO pricing, Bedrock WordPress, ERPNext v16, and a zero-downtime host migration across Cloudways, DigitalOcean, and Cloudflare.",
-    tags: ["WordPress / Bedrock", "WooCommerce", "ERPNext", "PHP", "Infra"],
+      "B2B storefront for NIST-traceable metal detector and X-ray test standards — a division of Fastec Services LLC. Full-stack development and technical operations: 50+ custom WooCommerce plugins, a real-time SKU configurator across 10 product lines, QuickBooks Desktop and Zoho Inventory integration, Bedrock WordPress with Git-deployed staging, and a zero-downtime migration to DigitalOcean behind Cloudflare.",
+    tags: ["WordPress / Bedrock", "WooCommerce", "PHP", "QuickBooks", "Infra"],
     link: "https://calibrationwands.com",
     flagship: false,
   },

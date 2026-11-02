@@ -20,12 +20,12 @@ const categories = [
 	{
 		title: "Frontend",
 		num: "/02",
-		items: ["React", "Next.js 16", "TypeScript", "Three.js / R3F", "Tailwind v4"],
+		items: ["React", "Next.js 16", "TypeScript", "Vite", "Three.js / R3F", "Tailwind v4"],
 	},
 	{
 		title: "Backend / Data",
 		num: "/03",
-		items: ["Node.js", "Express", "Python", "PHP", "PostgreSQL", "ERPNext"],
+		items: ["Node.js", "Express", "Python", "PHP", "PostgreSQL", "MySQL", "SQL Server", "Prisma", "FastAPI"],
 	},
 	{
 		title: "Infra",
@@ -34,11 +34,23 @@ const categories = [
 			"Cloudflare",
 			"Oracle Cloud",
 			"DigitalOcean",
-			"Cloudways",
+			"AWS",
+			"GitLab CI",
+			"Linux",
 			"Docker",
 			"WSL",
 			"Tailscale",
 		],
+	},
+	{
+		title: "Testing",
+		num: "/05",
+		items: ["Vitest", "Node test runner", "Supertest", "Playwright", "ESLint"],
+	},
+	{
+		title: "Business Systems",
+		num: "/06",
+		items: ["WooCommerce", "QuickBooks (qbXML)", "Zoho Inventory", "Stripe", "UPS API", "Slack"],
 	},
 ] as const;
 
@@ -59,8 +71,8 @@ export function Skills() {
 							Tools of the <span className="serif-accent">trade</span>
 						</h2>
 						<p className="text-[14px] leading-[1.7] text-[var(--color-muted2)] max-w-[640px] mt-3">
-							The stack I actually ship with — every tool here is running in
-							production today.
+							The stack I ship with: production web apps, the infrastructure
+							under them, and the business systems they talk to.
 						</p>
 					</motion.div>
 					<div className="grid sm:grid-cols-2 gap-px bg-[var(--color-border)] border border-[var(--color-border)]">
