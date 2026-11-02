@@ -15,7 +15,7 @@ const projects: Project[] = [
   {
     title: "Sawgrass 17 — 3D Shot Tracers",
     blurb:
-      "Broadcast-style shot tracers over the island-green 17th at TPC Sawgrass — a React Three Fiber scene with a 2D overhead heatmap and per-shot stats panel, all in the browser. No game engine. Interactive scene live below — drag to orbit, switch pin days.",
+      "Broadcast-style shot tracers over the island-green 17th at TPC Sawgrass — a React Three Fiber scene with a 2D overhead heatmap and per-shot stats panel, all in the browser. No game engine. Section preview below; interactive scene landing next.",
     tags: ["Three.js", "React Three Fiber", "Next.js 16", "WebGL"],
     links: [
       { label: "See it", href: "#golf" },

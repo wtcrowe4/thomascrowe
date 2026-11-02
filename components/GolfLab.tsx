@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SawgrassStage } from "@/components/sawgrass17/SawgrassStage";
 
 export function GolfLab() {
 	return (
@@ -50,7 +49,49 @@ export function GolfLab() {
 						transition={{ duration: 0.8 }}
 						className="bg-bg border border-border aspect-16/10 relative overflow-hidden"
 					>
-						<SawgrassStage />
+						<div
+							className="absolute inset-0 flex items-center justify-center"
+							style={{
+								background:
+									"radial-gradient(ellipse 60% 70% at 50% 60%, rgba(34,197,94,0.08), transparent 70%), linear-gradient(180deg, #0a1822 0%, #050811 100%)",
+							}}
+						>
+							<div
+								className="absolute inset-0"
+								style={{
+									backgroundImage:
+										"linear-gradient(rgba(251,146,60,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(251,146,60,0.04) 1px, transparent 1px)",
+									backgroundSize: "40px 40px",
+								}}
+							/>
+							<svg
+								className="absolute inset-0 w-full h-full opacity-50"
+								viewBox="0 0 800 500"
+								preserveAspectRatio="none"
+							>
+								<path d="M 100 400 Q 350 80 600 280" stroke="var(--color-accent)" strokeWidth="1.5" fill="none" strokeDasharray="4 4" />
+								<path d="M 110 400 Q 380 60 640 300" stroke="var(--color-accent)" strokeWidth="1.5" fill="none" strokeDasharray="4 4" opacity="0.6" />
+								<path d="M 90 400 Q 340 100 560 340" stroke="var(--color-accent)" strokeWidth="1.5" fill="none" strokeDasharray="4 4" opacity="0.4" />
+								<circle cx="600" cy="280" r="4" fill="var(--color-accent)" />
+								<circle cx="640" cy="300" r="3" fill="var(--color-accent)" opacity="0.6" />
+								<circle cx="560" cy="340" r="3" fill="var(--color-accent)" opacity="0.7" />
+							</svg>
+							<div className="relative text-center flex flex-col items-center gap-5 max-w-105 px-10">
+								<div className="w-16 h-16 border border-accent flex items-center justify-center text-accent font-mono text-[14px]">⛳</div>
+								<div className="font-mono text-[10px] text-accent tracking-[0.25em] uppercase">Roadmap · Splat View (v2)</div>
+								<div className="text-[24px] font-semibold tracking-[-0.02em]">
+									Gaussian splat of Hole 17<br />+ live shot tracers
+								</div>
+								<div className="text-[13px] text-muted2 leading-[1.7]">
+									In-world fly-through with shot data layered as glowing arcs. Click any tracer to see the player, distance, and outcome. Coming with the splat capture.
+								</div>
+								<div className="flex gap-2 mt-2">
+									{["Three.js", "3DGS", "v2"].map((t) => (
+										<span key={t} className="tag">{t}</span>
+									))}
+								</div>
+							</div>
+						</div>
 					</motion.div>
 
 					<div className="flex flex-col gap-4">
