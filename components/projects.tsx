@@ -1,11 +1,15 @@
+type ProjectLink = { label: string; href: string };
+
 type Project = {
   title: string;
   blurb: string;
   tags: string[];
-  link: string | null;
+  links: ProjectLink[];
   note?: string;
   flagship: boolean;
 };
+
+const CASEBOOK = "https://github.com/wtcrowe4/work-casebook";
 
 const projects: Project[] = [
   {
@@ -13,7 +17,10 @@ const projects: Project[] = [
     blurb:
       "Broadcast-style shot tracers over the island-green 17th at TPC Sawgrass — a React Three Fiber scene with a 2D overhead heatmap and per-shot stats panel, all in the browser. No game engine. Interactive scene live below — drag to orbit, switch pin days.",
     tags: ["Three.js", "React Three Fiber", "Next.js 16", "WebGL"],
-    link: "#golf",
+    links: [
+      { label: "See it", href: "#golf" },
+      { label: "Code", href: "https://github.com/wtcrowe4/sawgrass_17" },
+    ],
     flagship: true,
   },
   {
@@ -21,7 +28,9 @@ const projects: Project[] = [
     blurb:
       "Internal full-stack platform that turns WooCommerce orders into manufacturing outputs: 3,800+ auto-generated NIST-traceable certificates (~450 hours of manual document work eliminated), engraving SVGs, and STL files for the CNC. Certificates are generated through Adobe PDF Services, AES-256 locked, and signed with pyHanko for tamper-evident verification. Tested with Vitest and Supertest, deployed through GitLab CI.",
     tags: ["React/Vite", "Express", "Prisma/PostgreSQL", "Adobe PDF Services", "GitLab CI"],
-    link: null,
+    links: [
+      { label: "Case study", href: `${CASEBOOK}#2-test-standards-hub--order-certificate--production-platform` },
+    ],
     note: "Internal · in production",
     flagship: false,
   },
@@ -30,28 +39,51 @@ const projects: Project[] = [
     blurb:
       "B2B storefront for NIST-traceable metal detector and X-ray test standards — a division of Fastec Services LLC. Full-stack development and technical operations: 50+ custom WooCommerce plugins, a real-time SKU configurator across 10 product lines, QuickBooks Desktop and Zoho Inventory integration, Bedrock WordPress with Git-deployed staging, and a zero-downtime migration to DigitalOcean behind Cloudflare.",
     tags: ["WordPress / Bedrock", "WooCommerce", "PHP", "QuickBooks", "Infra"],
-    link: "https://calibrationwands.com",
+    links: [
+      { label: "Live site", href: "https://calibrationwands.com" },
+      { label: "Case study", href: `${CASEBOOK}#3-production-migration--infrastructure-hardening` },
+    ],
+    flagship: false,
+  },
+  {
+    title: "FlowLocal — Local Voice Dictation",
+    blurb:
+      "Open-source voice-dictation stack for Windows that never leaves the machine: GPU faster-whisper transcription, Ollama text cleanup, retrieval over personal notes, and streamed Kokoro TTS replies, served from FastAPI.",
+    tags: ["Python", "FastAPI", "faster-whisper", "Ollama", "Kokoro TTS"],
+    links: [{ label: "Code", href: "https://github.com/wtcrowe4/FlowLocal" }],
+    note: "Open source",
+    flagship: false,
+  },
+  {
+    title: "Self-Hosted AI Lab",
+    blurb:
+      "Local LLM inference and agent pipelines on RTX 5080/4070 GPUs (vLLM, Ollama, LangGraph), pgvector RAG and Unsloth fine-tuning, a Tailscale mesh across five machines, and a Git-synced knowledge base across Windows, Linux, and Android. The proving ground for the production agents at work.",
+    tags: ["vLLM", "Ollama", "LangGraph", "pgvector", "Tailscale", "Docker"],
+    links: [
+      { label: "Case study", href: `${CASEBOOK}#1-self-hosted-ai-automation--a-fleet-of-production-agents` },
+    ],
+    note: "Home lab",
     flagship: false,
   },
 ];
 
 function Card({ p }: { p: Project }) {
-  const inner = (
-    <>
+  return (
+    <div
+      className={`group bg-bg hover:bg-surface transition-colors p-8 flex flex-col gap-4 min-h-[240px] ${
+        p.flagship ? "md:col-span-2" : ""
+      }`}
+    >
       <div className="flex items-start justify-between gap-4">
         <h3 className="text-xl font-medium tracking-tight">{p.title}</h3>
-        {p.link ? (
-          <span className="text-muted group-hover:text-accent transition-colors">
-            ↗
-          </span>
-        ) : (
+        {p.note && (
           <span className="font-mono text-[10px] uppercase tracking-wider text-muted whitespace-nowrap mt-1.5">
             {p.note}
           </span>
         )}
       </div>
       <p className="text-muted text-sm leading-relaxed flex-1">{p.blurb}</p>
-      <div className="flex flex-wrap gap-2 mt-auto">
+      <div className="flex flex-wrap gap-2">
         {p.tags.map((t) => (
           <span
             key={t}
@@ -61,25 +93,23 @@ function Card({ p }: { p: Project }) {
           </span>
         ))}
       </div>
-    </>
-  );
-
-  const className = `group bg-bg hover:bg-surface transition-colors p-8 flex flex-col gap-4 min-h-[240px] ${
-    p.flagship ? "md:col-span-2" : ""
-  }`;
-
-  if (!p.link) {
-    return <div className={className}>{inner}</div>;
-  }
-  return (
-    <a
-      href={p.link}
-      target={p.link.startsWith("http") ? "_blank" : undefined}
-      rel={p.link.startsWith("http") ? "noreferrer" : undefined}
-      className={className}
-    >
-      {inner}
-    </a>
+      <div className="flex flex-wrap gap-5 mt-auto pt-2 font-mono text-[11px] uppercase tracking-wider">
+        {p.links.map((l) => {
+          const external = l.href.startsWith("http");
+          return (
+            <a
+              key={l.label}
+              href={l.href}
+              target={external ? "_blank" : undefined}
+              rel={external ? "noreferrer" : undefined}
+              className="text-accent hover:opacity-80 transition-opacity"
+            >
+              {l.label} {external ? "↗" : "→"}
+            </a>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
@@ -99,6 +129,15 @@ export default function Projects() {
             <Card key={p.title} p={p} />
           ))}
         </div>
+
+        <a
+          href={CASEBOOK}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 mt-8 text-accent hover:opacity-80 transition-opacity"
+        >
+          All six case studies in the work casebook <span>→</span>
+        </a>
       </div>
     </section>
   );

@@ -79,8 +79,8 @@ export function Hero() {
 					<a href="#projects" className="btn btn-primary">
 						View Selected Work <span className="arrow">→</span>
 					</a>
-					<a href="#contact" className="btn btn-outline">
-						Get in Touch
+					<a href="/Thomas_Crowe_Resume.pdf" target="_blank" rel="noreferrer" className="btn btn-outline">
+						Resume (PDF)
 					</a>
 				</div>
 			</motion.div>

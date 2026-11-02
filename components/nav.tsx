@@ -7,6 +7,7 @@ const links = [
   { href: "#golf", label: "Golf" },
   { href: "#projects", label: "Projects" },
   { href: "#llm", label: "AI / LLM" },
+  { href: "#experience", label: "Experience" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -45,10 +46,12 @@ export default function Nav() {
           ))}
         </nav>
         <a
-          href="#contact"
+          href="/Thomas_Crowe_Resume.pdf"
+          target="_blank"
+          rel="noreferrer"
           className="hidden md:inline-block text-sm px-4 py-2 rounded-full bg-accent text-black font-medium hover:bg-accent-soft transition-colors"
         >
-          Get in touch
+          Resume ↓
         </a>
       </div>
     </header>

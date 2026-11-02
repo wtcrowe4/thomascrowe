@@ -19,9 +19,9 @@ const items = [
 		tags: ["TypeScript", "React", "Node", "Python", "PostgreSQL", "AWS"],
 	},
 	{
-		period: "Prior to 2022",
-		role: "Operations & Management",
-		company: "Hospitality & Retail",
+		period: "2016 — 2024",
+		role: "General Manager",
+		company: "Arnold's of Powdersville",
 		desc: "Eight years running a high-volume business before moving into engineering — managing teams, budgets, and inventory under pressure. It is why I build with the operator's problem in mind.",
 		tags: ["Operations", "Team Leadership", "Problem Solving"],
 	},
