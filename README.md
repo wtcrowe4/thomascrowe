@@ -79,6 +79,10 @@ Then `npx tsc --noEmit && npm run build`, check the Golf section, commit.
 - Synced folders are mirrored (upstream deletions propagate), then
   `components/sawgrass17/overrides/parts/*` is copied on top. Today that stubs
   `GaussianSplat` so the splat library is not a dependency.
+- ext.config.ts aliases @react-three/postprocessing to
+  components/sawgrass17/overrides/postprocessing-stub.tsx (the scene ships with post
+  off). If a sync adds new imports from that package, the build fails on the missing
+  export: extend the stub or drop the alias.
 - Guards fail the sync on remote asset URLs (vendor them under `public/`) and on
   package imports missing from `package.json`.
 - `components/sawgrass17/SOURCE.txt` records the source commit.

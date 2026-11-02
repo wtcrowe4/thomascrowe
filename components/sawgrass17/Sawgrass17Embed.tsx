@@ -50,6 +50,14 @@ export default function Sawgrass17Embed({ intro = true, onReady }: Sawgrass17Emb
       if (!root || !root.store.getState().scene.background) return;
       if (++frames >= 3) {
         done = true;
+        // Touch: OrbitControls sets touch-action:none on the canvas, which
+        // traps page scrolling. pan-y hands vertical swipes back to the
+        // browser (page scrolls); horizontal drags still orbit. Applied here,
+        // after OrbitControls has connected, so it is not overwritten.
+        if (window.matchMedia("(pointer: coarse)").matches) {
+          const canvas = hostRef.current?.querySelector("canvas");
+          if (canvas) canvas.style.touchAction = "pan-y";
+        }
         onReady?.();
       }
     });
@@ -87,14 +95,18 @@ export default function Sawgrass17Embed({ intro = true, onReady }: Sawgrass17Emb
     <div ref={hostRef} className="absolute inset-0">
       <Sawgrass17 shots={shots} pin={pin} onHoverShot={onHover} intro={intro} />
 
-      <div className="absolute top-3 right-3 z-10 flex flex-wrap justify-end gap-1.5">
+      <div className="pointer-events-none absolute bottom-3 left-3 z-10 border sm:top-3 sm:bottom-auto border-white/10 bg-black/60 px-2 py-1 font-mono text-[9px] uppercase tracking-widest text-white/60 backdrop-blur-sm">
+        Illustrative shots
+      </div>
+
+      <div className="absolute top-2 right-2 left-2 z-10 flex flex-wrap justify-end gap-1 sm:top-3 sm:right-3 sm:left-auto sm:max-w-[70%] sm:gap-1.5">
         {PINS.map((p) => (
           <button
             key={p}
             type="button"
             onClick={() => setPin(p)}
             aria-pressed={pin === p}
-            className={`inline-flex items-center gap-1.5 border px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest backdrop-blur-sm transition-colors ${
+            className={`inline-flex items-center gap-1 border px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-wider sm:gap-1.5 sm:px-2.5 sm:py-1 sm:text-[10px] sm:tracking-widest backdrop-blur-sm transition-colors ${
               pin === p
                 ? "border-accent bg-black/60 text-accent"
                 : "border-white/15 bg-black/50 text-white/60 hover:text-white"
@@ -123,6 +135,9 @@ export default function Sawgrass17Embed({ intro = true, onReady }: Sawgrass17Emb
             </div>
             <div className="mt-0.5 text-[11px] text-white/75">
               {hovered.player} &middot; {hovered.carryYds} yds{hovered.club ? ` · ${hovered.club}` : ""}
+            </div>
+            <div className="mt-1 font-mono text-[9px] uppercase tracking-widest text-white/45">
+              Illustrative shot &middot; not tour data
             </div>
           </div>
         ) : (
