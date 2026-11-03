@@ -44,6 +44,15 @@ const projects: Project[] = [
     flagship: false,
   },
   {
+    title: "Agent Workstation — Daily-Driver Tooling",
+    blurb:
+      "The tools I use every workday to direct AI coding agents from the terminal: DialDeck turns a Surface Dial into a mode-based control surface for herdr agent orchestration, permission approvals, and CAD/CAM modeling (AutoHotkey v2, keyless F13–F24 triggers); a local Kokoro TTS daemon (FastAPI) reads agent output aloud; and a herdr plugin brings a unified message inbox, toasts, and unread badges into the terminal.",
+    tags: ["AutoHotkey v2", "Python", "FastAPI", "Kokoro TTS", "herdr"],
+    links: [{ label: "DialDeck code", href: "https://github.com/wtcrowe4/DialDeck" }],
+    note: "Daily driver",
+    flagship: false,
+  },
+  {
     title: "Self-Hosted AI Lab",
     blurb:
       "Local LLM inference and agent pipelines on RTX 5080/4070 GPUs (vLLM, Ollama, LangGraph), pgvector RAG and Unsloth fine-tuning, a Tailscale mesh across five machines, and a Git-synced knowledge base across Windows, Linux, and Android. The proving ground for the production agents at work.",
@@ -64,7 +73,7 @@ const projects: Project[] = [
       { label: "Code", href: "https://github.com/wtcrowe4/sawgrass_17" },
     ],
     note: "In progress",
-    flagship: false,
+    flagship: true,
   },
 ];
 
