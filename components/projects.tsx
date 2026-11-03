@@ -13,17 +13,6 @@ const CASEBOOK = "https://github.com/wtcrowe4/work-casebook";
 
 const projects: Project[] = [
   {
-    title: "Sawgrass 17 — 3D Shot Tracers",
-    blurb:
-      "Broadcast-style shot tracers over the island-green 17th at TPC Sawgrass — a React Three Fiber scene with a 2D overhead heatmap and per-shot stats panel, all in the browser. No game engine. Section preview below; interactive scene landing next.",
-    tags: ["Three.js", "React Three Fiber", "Next.js 16", "WebGL"],
-    links: [
-      { label: "See it", href: "#golf" },
-      { label: "Code", href: "https://github.com/wtcrowe4/sawgrass_17" },
-    ],
-    flagship: true,
-  },
-  {
     title: "Test Standards Hub — Order-to-Manufacturing Platform",
     blurb:
       "Internal full-stack platform that turns WooCommerce orders into manufacturing outputs: 3,800+ auto-generated NIST-traceable certificates (~450 hours of manual document work eliminated), engraving SVGs, and STL files for the CNC. Certificates are generated through Adobe PDF Services, AES-256 locked, and signed with pyHanko for tamper-evident verification. Tested with Vitest and Supertest, deployed through GitLab CI.",
@@ -32,7 +21,7 @@ const projects: Project[] = [
       { label: "Case study", href: `${CASEBOOK}#2-test-standards-hub--order-certificate--production-platform` },
     ],
     note: "Internal · in production",
-    flagship: false,
+    flagship: true,
   },
   {
     title: "CalibrationWands.com",
@@ -63,6 +52,18 @@ const projects: Project[] = [
       { label: "Case study", href: `${CASEBOOK}#1-self-hosted-ai-automation--a-fleet-of-production-agents` },
     ],
     note: "Home lab",
+    flagship: false,
+  },
+  {
+    title: "Sawgrass 17 — 3D Shot Tracers",
+    blurb:
+      "Broadcast-style shot tracers over the island-green 17th at TPC Sawgrass — a React Three Fiber scene with a 2D overhead heatmap and per-shot stats panel, all in the browser. No game engine. Section preview below; interactive scene landing next.",
+    tags: ["Three.js", "React Three Fiber", "Next.js 16", "WebGL"],
+    links: [
+      { label: "See it", href: "#golf" },
+      { label: "Code", href: "https://github.com/wtcrowe4/sawgrass_17" },
+    ],
+    note: "In progress",
     flagship: false,
   },
 ];
