@@ -12,6 +12,7 @@ const categories = [
 			"vLLM",
 			"pgvector",
 			"Langfuse",
+			"UCP (agentic commerce)",
 			"Unsloth",
 			"AWQ / GPTQ",
 			"Claude Code",
@@ -50,7 +51,7 @@ const categories = [
 	{
 		title: "Business Systems",
 		num: "/06",
-		items: ["WooCommerce", "QuickBooks (qbXML)", "Zoho Inventory", "Stripe", "UPS API", "Slack"],
+		items: ["WooCommerce", "QuickBooks (qbXML)", "Zoho Inventory", "Stripe", "UPS API", "OpenID Connect", "Slack"],
 	},
 ] as const;
 
