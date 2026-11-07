@@ -66,6 +66,34 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
   {
+    slug: "customer-certificate-portal",
+    title: "Customer accounts + certificate portal",
+    kicker: "Customer experience",
+    summary:
+      "Customers sign in and download their own certificates from My Account, pushed there automatically when an order is completed.",
+    problem:
+      "Certificates reached customers only as email attachments. A customer who needed one again had to find the old email or ask for a new copy.",
+    approach:
+      "When the order platform sends the order-complete email, it checks whether the customer has a store account. If they do, it uploads that order's certificates to the storefront, where only the account owner can open them.",
+    flow: [
+      ["Order completed in Test Standards Hub"],
+      ["Account check"],
+      ["Authenticated upload, checksum-verified"],
+      ["My Account: Certificates tab"],
+      ["Customer views + downloads"],
+    ],
+    points: [
+      "Certificates upload over an authenticated API with a SHA-256 checksum, are mapped to each order line, and are named by product so customers can find the right PDF.",
+      "Owner-only access: a certificate opens only for the account that placed the order.",
+      "Sign-in by emailed one-time code or magic link, or with Google over OpenID Connect (PKCE, ID tokens verified against the provider's signing keys, nonce and state checks).",
+      "Sign-in is hardened with bot protection, per-address and per-IP rate limits and lockouts, and a site-wide alarm that pauses code entry on a burst of wrong codes. Staff accounts can't use it.",
+      "A security review and fixes before go-live, and every piece shipped behind an off / preview / on switch, tested as a staff preview on the live site before customers saw it.",
+    ],
+    stack: ["WooCommerce", "PHP", "OpenID Connect", "Redis", "Cloudflare Turnstile", "Node/Express", "REST"],
+    outcome:
+      "Customers with an account can open their certificates any time after the order ships, without searching their email or asking for a copy.",
+  },
+  {
     slug: "accounting-and-ai-order-intake",
     title: "Accounting integration + AI order intake",
     kicker: "Business systems",
@@ -125,6 +153,36 @@ export const caseStudies: CaseStudy[] = [
     stack: ["LangGraph", "vLLM", "Ollama", "pgvector", "PyTorch", "Unsloth", "Langfuse", "Python", "Docker"],
     outcome:
       "Repetitive operations automated on self-hosted infrastructure, keeping sensitive business data in-house and independent of third-party APIs.",
+  },
+  {
+    slug: "agent-ready-storefront",
+    title: "Agent-ready storefront (UCP)",
+    kicker: "Agentic commerce",
+    summary:
+      "AI shopping agents can discover the store, browse every product option at its exact price and build a checkout, while payment always stays on the store's own checkout.",
+    problem:
+      "AI agents are starting to shop on behalf of buyers. A configurable catalog with thousands of option combinations is hard for an agent to price correctly, and no agent should be able to bypass checkout validation, pricing, tax or fraud controls.",
+    approach:
+      "Implemented the Universal Commerce Protocol (UCP) so an agent goes through the same pricing and checkout code a browser does.",
+    flow: [
+      ["AI agent"],
+      ["Discovery profile"],
+      ["Catalog search", "Product options + exact price"],
+      ["Checkout session"],
+      ["Hand-off link to the buyer"],
+      ["Store checkout: tax, shipping, 3-D Secure"],
+      ["Order status + tracking"],
+    ],
+    points: [
+      "Prices come from the store's own option-pricing engine through an isolated in-memory cart, so an agent's price can never differ from the website's.",
+      "A PHP port of the storefront's SKU generator, verified byte-identical to the JavaScript version across all 7,093 configurations.",
+      "No payment handlers: completing a session returns a hand-off link that rebuilds the exact cart in the buyer's browser, where the normal checkout runs. No card data ever touches the agent API.",
+      "Idempotent checkout sessions bound to the agent, per-IP and per-agent rate limits, a site-wide session cap with an alarm, and order-status reads that carry no personal data.",
+      "Threat-modeled design, a security review and re-review fixes before launch, and a one-command kill switch.",
+    ],
+    stack: ["Universal Commerce Protocol", "PHP", "WooCommerce", "REST", "Stripe", "Cloudflare"],
+    outcome:
+      "The catalog is open to AI shopping agents at exact prices, and every paid order still goes through the store's own checkout.",
   },
   {
     slug: "production-migration",
