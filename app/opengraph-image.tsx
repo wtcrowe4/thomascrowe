@@ -61,8 +61,8 @@ export default function OpenGraphImage() {
             lineHeight: 1.4,
           }}
         >
-          Production LLM agents, e-commerce infrastructure, and browser-native
-          3D — from the storefront to the GPU.
+          Production web platforms, business-system integrations, self-hosted
+          AI, and the infrastructure underneath.
         </div>
         <div
           style={{

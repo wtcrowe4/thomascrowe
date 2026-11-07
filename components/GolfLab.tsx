@@ -15,7 +15,7 @@ export function GolfLab() {
 						"radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--color-accent) 4%, transparent) 0%, transparent 60%)",
 				}}
 			/>
-			<section className="relative z-2 max-w-[1280px] mx-auto px-6 md:px-12">
+			<section className="relative z-2 site-container">
 				<motion.div
 					initial={{ opacity: 0, y: 28 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -24,13 +24,12 @@ export function GolfLab() {
 					className="grid lg:grid-cols-[1fr_auto] gap-15 items-end mb-14"
 				>
 					<div>
-						<div className="eyebrow"><span className="num">03 /</span> Golf Lab · Where data meets fairways</div>
-						<h2 className="font-semibold tracking-[-0.02em] leading-[0.98] mb-7" style={{ fontSize: "clamp(40px, 5.2vw, 72px)" }}>
-							The 17th at <span className="serif-accent">Sawgrass</span>.<br />
-							Every shot, traced.
+						<div className="eyebrow">Side project · In progress</div>
+						<h2 className="section-title mb-7">
+							The 17th at <span className="serif-accent">Sawgrass</span>
 						</h2>
 						<p className="text-[17px] leading-[1.7] text-muted2 max-w-160 mt-5">
-							A live data canvas over a 3D scene of the most famous par-3 in golf — broadcast-style shot tracers, an overhead heatmap, and strokes-gained breakdowns, all rendered in the browser.
+							Me playing around: a 3D scene of the most famous par-3 in golf, with broadcast-style shot tracers in the browser. Coming soon. The preview below is illustrative, not real data.
 						</p>
 					</div>
 					<div className="flex flex-col gap-1.5 font-mono text-[11px] text-muted tracking-widest lg:text-right">

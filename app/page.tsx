@@ -2,11 +2,11 @@ import Nav from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { Ticker } from "@/components/Ticker";
 import About from "@/components/about";
+import { Casebook } from "@/components/Casebook";
 import Projects from "@/components/projects";
-import { GolfLab } from "@/components/GolfLab";
-import { LLMWork } from "@/components/LLMWork";
-import { Skills } from "@/components/Skills";
 import { Experience } from "@/components/Experience";
+import { Skills } from "@/components/Skills";
+import { GolfLab } from "@/components/GolfLab";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 
@@ -16,12 +16,12 @@ export default function Page() {
       <Nav />
       <Hero />
       <Ticker />
+      <Casebook />
       <About />
-      <Projects />
-      <GolfLab />
-      <LLMWork />
-      <Skills />
       <Experience />
+      <Projects />
+      <Skills />
+      <GolfLab />
       <Contact />
       <Footer />
     </>

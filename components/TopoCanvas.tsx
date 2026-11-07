@@ -96,10 +96,6 @@ function TopoOverlaySVG() {
           <stop offset="30%" stopColor="transparent" />
           <stop offset="100%" stopColor="#03070f" />
         </radialGradient>
-        <filter id="glowFilter">
-          <feGaussianBlur stdDeviation="2" result="blur" />
-          <feComposite in="SourceGraphic" in2="blur" operator="over" />
-        </filter>
       </defs>
 
       <rect width="1280" height="720" fill="url(#topoFade)" />
@@ -143,15 +139,6 @@ function TopoOverlaySVG() {
 
       <text x="255" y="390" fill="#fb923c" opacity="0.6" fontSize="8" fontFamily="JetBrains Mono, monospace" letterSpacing="2">+340m</text>
       <text x="1068" y="330" fill="#fb923c" opacity="0.6" fontSize="8" fontFamily="JetBrains Mono, monospace" letterSpacing="2">+182m</text>
-      <text x="630" y="438" fill="#38bdf8" opacity="0.55" fontSize="8" fontFamily="JetBrains Mono, monospace" letterSpacing="2">REEDY RIVER</text>
-
-      <g filter="url(#glowFilter)">
-        <circle cx={640} cy={360} r={4} fill="#fb923c" opacity="0.9" />
-        <circle cx={640} cy={360} r={10} fill="#fb923c" opacity="0.2" />
-        <circle cx={640} cy={360} r={18} fill="#fb923c" opacity="0.08" />
-        <line x1={640} y1={350} x2={640} y2={330} stroke="#fb923c" strokeWidth="1" opacity="0.6" />
-        <line x1={635} y1={330} x2={650} y2={330} stroke="#fb923c" strokeWidth="1" opacity="0.6" />
-      </g>
     </svg>
   );
 }

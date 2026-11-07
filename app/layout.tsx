@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { MotionProvider } from "@/components/MotionProvider";
 
 const description =
-  "Full-stack developer and technical operations lead in Greenville, SC. Production web platforms, business-system integrations, self-hosted AI, and browser-native 3D.";
+  "Full-stack developer and technical operations lead in Greenville, SC. Production web platforms, business-system integrations, self-hosted AI, and the infrastructure underneath.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://thomascrowe.netlify.app"),
@@ -39,8 +40,13 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&display=swap"
           rel="stylesheet"
         />
+        <noscript>
+          <style>{`[style*="opacity:0"]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
       </head>
-      <body>{children}</body>
+      <body>
+        <MotionProvider>{children}</MotionProvider>
+      </body>
     </html>
   );
 }

@@ -56,9 +56,9 @@ const categories = [
 
 export function Skills() {
 	return (
-		<div className="py-[140px] relative z-[2]">
-			<section id="skills-section" className="max-w-[1280px] mx-auto px-12">
-				<div className="grid lg:grid-cols-[4fr_8fr] gap-20 items-start">
+		<div className="py-32 border-t border-border relative z-[2]">
+			<section id="skills" className="site-container">
+				<div className="grid lg:grid-cols-[4fr_8fr] gap-12 lg:gap-20 items-start">
 					<motion.div
 						initial={{ opacity: 0, y: 28 }}
 						whileInView={{ opacity: 1, y: 0 }}
@@ -66,8 +66,8 @@ export function Skills() {
 						transition={{ duration: 0.8 }}
 						className="lg:sticky lg:top-[120px]"
 					>
-						<div className="eyebrow"><span className="num">04 /</span> Stack</div>
-						<h2 className="font-semibold tracking-[-0.02em] leading-[0.98]" style={{ fontSize: "clamp(40px, 5.2vw, 72px)" }}>
+						<div className="eyebrow">Stack</div>
+						<h2 className="section-title">
 							Tools of the <span className="serif-accent">trade</span>
 						</h2>
 						<p className="text-[14px] leading-[1.7] text-[var(--color-muted2)] max-w-[640px] mt-3">
@@ -75,7 +75,7 @@ export function Skills() {
 							under them, and the business systems they talk to.
 						</p>
 					</motion.div>
-					<div className="grid sm:grid-cols-2 gap-px bg-[var(--color-border)] border border-[var(--color-border)]">
+					<div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-[var(--color-border)] border border-[var(--color-border)]">
 						{categories.map((cat, idx) => (
 							<motion.div
 								key={cat.title}

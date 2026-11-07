@@ -8,7 +8,7 @@ const items = [
 		period: "Feb 2024 — Present",
 		role: "Full-Stack Developer & Technical Operations Lead",
 		company: "CalibrationWands.com (Fastec Services LLC)",
-		desc: "Build and operate the technical stack for a B2B manufacturer of NIST-traceable test standards serving food, pharmaceutical, and textile quality-control customers. Built Test Standards Hub (React/Vite, Express, Prisma/PostgreSQL), which turns WooCommerce orders into certificates, engraving SVGs, and CNC-ready STL files: 3,800+ certificates auto-generated, ~450 hours of manual document work eliminated. Integrated QuickBooks Desktop and Zoho Inventory with verified, reversible writes; put an LLM intake pipeline with human approval in front of emailed purchase orders; migrated the live store to dedicated DigitalOcean hosting with zero downtime; and run GitLab CI/CD with health-checked deploys, error tracking, and alerting.",
+		desc: "Build and operate the technical stack for a B2B manufacturer of NIST-traceable test standards serving food, pharmaceutical, and textile quality-control customers. Built Test Standards Hub (React/Vite, Express, Prisma/PostgreSQL), which turns WooCommerce orders into certificates, engraving SVGs, and CNC-ready STL files: 3,800+ certificates auto-generated, the core of 500+ hours of manual work eliminated per year. Integrated QuickBooks Desktop and Zoho Inventory with verified, reversible writes; put an LLM intake pipeline with human approval in front of emailed purchase orders; migrated the live store to dedicated DigitalOcean hosting with zero downtime; and run GitLab CI/CD with health-checked deploys, error tracking, and alerting.",
 		tags: ["React", "Node/Express", "PostgreSQL", "WooCommerce", "QuickBooks", "GitLab CI", "Docker", "LLMs"],
 	},
 	{
@@ -29,8 +29,8 @@ const items = [
 
 export function Experience() {
 	return (
-		<div className="py-[140px] relative z-[2]">
-			<section id="experience" className="max-w-[1280px] mx-auto px-6 md:px-12">
+		<div className="py-32 border-t border-border relative z-[2]">
+			<section id="experience" className="site-container">
 				<motion.div
 					initial={{ opacity: 0, y: 28 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -38,8 +38,8 @@ export function Experience() {
 					transition={{ duration: 0.8 }}
 					className="mb-12"
 				>
-					<div className="eyebrow"><span className="num">05 /</span> Path</div>
-					<h2 className="font-semibold tracking-[-0.02em] leading-[0.98]" style={{ fontSize: "clamp(40px, 5.2vw, 72px)" }}>
+					<div className="eyebrow">Path</div>
+					<h2 className="section-title">
 						Experience &amp; <span className="serif-accent">trajectory</span>
 					</h2>
 				</motion.div>
@@ -51,7 +51,7 @@ export function Experience() {
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true, amount: 0.1 }}
 							transition={{ duration: 0.6, delay: i * 0.12 }}
-							className={`group grid lg:grid-cols-[220px_1fr] gap-15 py-8 border-t border-[var(--color-border)] ${
+							className={`group grid lg:grid-cols-[220px_1fr] gap-4 lg:gap-15 py-8 border-t border-[var(--color-border)] ${
 								i === items.length - 1 ? "border-b" : ""
 							} hover:bg-[var(--color-surface)] hover:px-5 transition-all`}
 						>
@@ -60,7 +60,7 @@ export function Experience() {
 							</div>
 							<div className="flex flex-col gap-2">
 								<div className="text-[22px] font-semibold tracking-[-0.01em]">{it.role}</div>
-								<div className="text-[13px] text-[var(--color-accent)] font-mono tracking-wide"> {it.company}</div>
+								<div className="text-[13px] text-[var(--color-accent)] font-mono tracking-wide">{it.company}</div>
 								<div className="text-[14px] text-[var(--color-muted2)] leading-[1.7] max-w-[700px] mt-1.5">{it.desc}</div>
 								<div className="flex gap-1.5 flex-wrap mt-3">
 									{it.tags.map((t) => (

@@ -37,7 +37,7 @@ export function Hero() {
 				initial={{ opacity: 0, y: 30 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-				className="relative px-6 md:px-12 text-center flex flex-col items-center gap-7"
+				className="relative px-6 md:px-12 pb-20 text-center flex flex-col items-center gap-7"
 				style={{ color: "#e8eef8", zIndex: 10, maxWidth: 1100 }}
 			>
 				<div
@@ -70,14 +70,14 @@ export function Hero() {
 						lineHeight: 1.5,
 					}}
 				>
-					Full-stack developer and technical ops lead. I ship production LLM
-					agents, e-commerce infrastructure, and browser-native 3D — from the
-					storefront to the GPU.
+					I design, build and run production software for a B2B manufacturer:
+					web platforms, business-system integrations, self-hosted AI, and the
+					infrastructure underneath.
 				</p>
 
 				<div className="flex gap-3.5 mt-3 flex-wrap justify-center">
-					<a href="#projects" className="btn btn-primary">
-						View Selected Work <span className="arrow">→</span>
+					<a href="#casebook" className="btn btn-primary">
+						Read the Casebook <span className="arrow">→</span>
 					</a>
 					<a href="/Thomas_Crowe_Resume.pdf" target="_blank" rel="noreferrer" className="btn btn-outline">
 						Resume (PDF)
@@ -86,7 +86,7 @@ export function Hero() {
 			</motion.div>
 
 			<div
-				className="absolute bottom-8 left-0 right-0 grid grid-cols-2 md:grid-cols-[1fr_auto_1fr] items-end px-6 md:px-12 font-mono text-[10px] uppercase"
+				className="site-container absolute bottom-8 inset-x-0 grid grid-cols-2 md:grid-cols-[1fr_auto_1fr] items-end font-mono text-[10px] uppercase"
 				style={{ color: "rgba(232,238,248,0.5)", zIndex: 10, letterSpacing: "0.15em" }}
 			>
 				<div className="flex flex-col gap-1.5">

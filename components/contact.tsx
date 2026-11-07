@@ -25,28 +25,26 @@ const socials = [
 export default function Contact() {
   return (
     <section id="contact" className="py-32 border-t border-border">
-      <div className="mx-auto max-w-[1280px] px-6 md:px-12">
-        <p className="font-mono text-xs tracking-widest text-accent mb-6">
-          ◉ CONTACT
-        </p>
-        <h2 className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight text-balance max-w-3xl">
-          Want to talk shop, or curious how the tracers work?
+      <div className="site-container">
+        <div className="eyebrow">Contact</div>
+        <h2 className="section-title max-w-3xl">
+          Want to <span className="serif-accent">talk shop?</span>
         </h2>
 
-        <p className="mt-5 max-w-2xl text-lg text-muted">
+        <p className="mt-5 max-w-2xl text-lg text-muted2">
           Email is the best way to reach me. Happy to talk through any of
-          the work above — integrations, platform, agents, or golf data.
+          the work above: integrations, platform, or agents.
         </p>
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-px bg-border border border-border rounded-2xl overflow-hidden">
-          {socials.map((s) => (
+          {socials.map((s, i) => (
             <a
               key={s.label}
               href={s.href}
               target={s.href.startsWith("http") ? "_blank" : undefined}
               rel="noreferrer"
               className={`group bg-bg hover:bg-surface transition-colors p-8 flex items-center justify-between gap-4 ${
-                "primary" in s && s.primary ? "md:col-span-2" : ""
+                ("primary" in s && s.primary) || i === socials.length - 1 ? "md:col-span-2" : ""
               }`}
             >
               <div>
