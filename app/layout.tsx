@@ -30,6 +30,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Netlify injects "\n<!-- This site is hosted on Netlify ... -->" into <head>
+            on *.netlify.app production. The stray text node fails hydration (React #418),
+            so drop it, and the comment, before React hydrates. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var h=document.head;for(var n=h.firstChild;n;){var x=n.nextSibling;if((n.nodeType===3&&!n.nodeValue.trim())||(n.nodeType===8&&/Netlify/.test(n.nodeValue)))h.removeChild(n);n=x;}})();`,
+          }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
