@@ -27,7 +27,7 @@ export default function Nav() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
+      <div className="mx-auto max-w-[1280px] px-6 md:px-12 h-16 flex items-center justify-between">
         <a href="#top" className="font-mono text-sm tracking-tight">
           <span className="text-accent">&lt;thomas</span>
           <span className="text-muted">.</span>

@@ -37,7 +37,7 @@ export function Hero() {
 				initial={{ opacity: 0, y: 30 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-				className="relative px-12 text-center flex flex-col items-center gap-7"
+				className="relative px-6 md:px-12 text-center flex flex-col items-center gap-7"
 				style={{ color: "#e8eef8", zIndex: 10, maxWidth: 1100 }}
 			>
 				<div
@@ -86,7 +86,7 @@ export function Hero() {
 			</motion.div>
 
 			<div
-				className="absolute bottom-8 left-0 right-0 flex justify-between items-end px-12 font-mono text-[10px] uppercase"
+				className="absolute bottom-8 left-0 right-0 grid grid-cols-2 md:grid-cols-[1fr_auto_1fr] items-end px-6 md:px-12 font-mono text-[10px] uppercase"
 				style={{ color: "rgba(232,238,248,0.5)", zIndex: 10, letterSpacing: "0.15em" }}
 			>
 				<div className="flex flex-col gap-1.5">
@@ -100,7 +100,7 @@ export function Hero() {
 				</div>
 
 				<div
-					className="flex flex-col items-center gap-1 font-mono text-[10px] tracking-[0.14em]"
+					className="hidden md:flex flex-col items-center gap-1 font-mono text-[10px] tracking-[0.14em]"
 					style={{ color: "var(--color-accent, #fb923c)", opacity: 0.8 }}
 				>
 					<div>34.8526° N · 82.3940° W</div>

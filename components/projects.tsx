@@ -68,10 +68,7 @@ const projects: Project[] = [
     blurb:
       "Broadcast-style shot tracers over the island-green 17th at TPC Sawgrass — a React Three Fiber scene with a 2D overhead heatmap and per-shot stats panel, all in the browser. No game engine. Section preview below; interactive scene landing next.",
     tags: ["Three.js", "React Three Fiber", "Next.js 16", "WebGL"],
-    links: [
-      { label: "See it", href: "#golf" },
-      { label: "Code", href: "https://github.com/wtcrowe4/sawgrass_17" },
-    ],
+    links: [{ label: "See it", href: "#golf" }],
     note: "In progress",
     flagship: true,
   },
@@ -80,12 +77,12 @@ const projects: Project[] = [
 function Card({ p }: { p: Project }) {
   return (
     <div
-      className={`group bg-bg hover:bg-surface transition-colors p-8 flex flex-col gap-4 min-h-[240px] ${
+      className={`group min-w-0 bg-bg hover:bg-surface transition-colors p-6 sm:p-8 flex flex-col gap-4 min-h-[240px] ${
         p.flagship ? "md:col-span-2" : ""
       }`}
     >
-      <div className="flex items-start justify-between gap-4">
-        <h3 className="text-xl font-medium tracking-tight">{p.title}</h3>
+      <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1">
+        <h3 className="min-w-0 text-xl font-medium tracking-tight">{p.title}</h3>
         {p.note && (
           <span className="font-mono text-[10px] uppercase tracking-wider text-muted whitespace-nowrap mt-1.5">
             {p.note}
@@ -126,7 +123,7 @@ function Card({ p }: { p: Project }) {
 export default function Projects() {
   return (
     <section id="projects" className="py-32 border-t border-border">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-[1280px] px-6 md:px-12">
         <p className="font-mono text-xs tracking-widest text-accent mb-6">
           ◉ SELECTED WORK
         </p>
@@ -134,7 +131,7 @@ export default function Projects() {
           Real systems, in production.
         </h2>
 
-        <div className="mt-16 grid md:grid-cols-2 gap-px bg-border border border-border rounded-2xl overflow-hidden">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-px bg-border border border-border rounded-2xl overflow-hidden">
           {projects.map((p) => (
             <Card key={p.title} p={p} />
           ))}

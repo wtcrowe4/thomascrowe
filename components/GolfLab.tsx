@@ -15,7 +15,7 @@ export function GolfLab() {
 						"radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--color-accent) 4%, transparent) 0%, transparent 60%)",
 				}}
 			/>
-			<section className="relative z-2 max-w-[1280px] mx-auto px-12">
+			<section className="relative z-2 max-w-[1280px] mx-auto px-6 md:px-12">
 				<motion.div
 					initial={{ opacity: 0, y: 28 }}
 					whileInView={{ opacity: 1, y: 0 }}

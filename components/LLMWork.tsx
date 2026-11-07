@@ -30,7 +30,7 @@ const showcases = [
 export function LLMWork() {
   return (
     <section id="llm" className="py-32 border-t border-border">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-[1280px] px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ export function LLMWork() {
           </p>
         </motion.div>
 
-        <div className="mt-16 grid md:grid-cols-2 gap-px bg-border border border-border rounded-2xl overflow-hidden">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-px bg-border border border-border rounded-2xl overflow-hidden">
           {showcases.map((s, i) => (
             <motion.div
               key={s.title}

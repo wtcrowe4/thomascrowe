@@ -25,7 +25,7 @@ const socials = [
 export default function Contact() {
   return (
     <section id="contact" className="py-32 border-t border-border">
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-[1280px] px-6 md:px-12">
         <p className="font-mono text-xs tracking-widest text-accent mb-6">
           ◉ CONTACT
         </p>
@@ -38,7 +38,7 @@ export default function Contact() {
           the work above — integrations, platform, agents, or golf data.
         </p>
 
-        <div className="mt-16 grid md:grid-cols-2 gap-px bg-border border border-border rounded-2xl overflow-hidden">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-px bg-border border border-border rounded-2xl overflow-hidden">
           {socials.map((s) => (
             <a
               key={s.label}
