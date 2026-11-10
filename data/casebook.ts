@@ -140,11 +140,11 @@ export const caseStudies: CaseStudy[] = [
     flow: [
       ["Orders, POs, documents"],
       ["LangGraph + custom Python", "pgvector RAG"],
-      ["Order processing", "PO → SKU mapping", "Document handling", "CNC G-code"],
+      ["Order processing", "PO → SKU mapping", "Email triage", "Document handling", "CNC G-code"],
       ["vLLM + Ollama serving", "Langfuse tracing + evals"],
     ],
     points: [
-      "Six agents orchestrated with LangGraph and custom Python, several exposed through Slack Socket Mode.",
+      "Six production agents (order processing, PO parsing to SKUs, email triage, document handling and CNC G-code generation) orchestrated with LangGraph and custom Python, several exposed through Slack Socket Mode.",
       "Models served on a self-hosted stack (vLLM and Ollama) at zero per-call API cost.",
       "Responses are grounded in a pgvector retrieval pipeline, so agents reason over real source documents rather than model memory.",
       "Local models fine-tuned with Unsloth and PyTorch, tracked in Weights & Biases, and quantized with AWQ/GPTQ for throughput.",
@@ -234,6 +234,7 @@ export const caseStudies: CaseStudy[] = [
       "GitLab CI on Docker runners: every merge runs tests, gitleaks secret scanning and an LLM-assisted code review.",
       "Zero-restart release-swap deploys with post-deploy health checks and schema-drift detection. A failed check keeps the previous release.",
       "Sentry and Bugsink error tracking, with alerts routed to Slack.",
+      "AI-augmented delivery: 2,000+ reviewed commits across three production repos in five months, directing AI coding agents through a spec → approval → review → merge workflow.",
       "Internal tools published behind Cloudflare Tunnel and Access, with no open inbound ports.",
     ],
     stack: ["GitLab CI", "Docker", "Sentry/Bugsink", "Cloudflare Tunnel + Access", "Oracle Cloud", "Linux/systemd"],
