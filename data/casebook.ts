@@ -85,6 +85,7 @@ export const caseStudies: CaseStudy[] = [
     points: [
       "Certificates upload over an authenticated API with a SHA-256 checksum, are mapped to each order line, and are named by product so customers can find the right PDF.",
       "Owner-only access: a certificate opens only for the account that placed the order.",
+      "A QR code on the product label is the backup to the printed certificate: it opens a downloadable copy of that line's certificate and the lot's traceability back to the manufacturer, through revocable single-purpose links (only a hash of each token is stored, with per-IP rate limits).",
       "Sign-in by emailed one-time code or magic link, or with Google over OpenID Connect (PKCE, ID tokens verified against the provider's signing keys, nonce and state checks).",
       "Sign-in is hardened with bot protection, per-address and per-IP rate limits and lockouts, and a site-wide alarm that pauses code entry on a burst of wrong codes. Staff accounts can't use it.",
       "A security review and fixes before go-live, and every piece shipped behind an off / preview / on switch, tested as a staff preview on the live site before customers saw it.",
