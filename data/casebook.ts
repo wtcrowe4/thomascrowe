@@ -72,7 +72,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "Customers sign in and download their own certificates from My Account, pushed there automatically when an order is completed.",
     problem:
-      "Certificates reached customers only as email attachments. A customer who needed one again had to find the old email or ask for a new copy.",
+      "Certificates shipped as a hard copy with each order, with no self-serve digital copy a customer could pull up later for an audit or their records.",
     approach:
       "When the order platform sends the order-complete email, it checks whether the customer has a store account. If they do, it uploads that order's certificates to the storefront, where only the account owner can open them.",
     flow: [
@@ -91,7 +91,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     stack: ["WooCommerce", "PHP", "OpenID Connect", "Redis", "Cloudflare Turnstile", "Node/Express", "REST"],
     outcome:
-      "Customers with an account can open their certificates any time after the order ships, without searching their email or asking for a copy.",
+      "Every order still ships with a hard-copy certificate, and customers with an account can also open and download a digital copy any time from My Account.",
   },
   {
     slug: "accounting-and-ai-order-intake",

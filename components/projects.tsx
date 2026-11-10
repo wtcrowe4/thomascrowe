@@ -10,11 +10,19 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "FlowLocal: Local Voice Dictation",
+    title: "Claude Usage Meter",
     blurb:
-      "Open-source voice-dictation stack for Windows that never leaves the machine: GPU faster-whisper transcription, Ollama text cleanup, retrieval over personal notes, and streamed Kokoro TTS replies, served from FastAPI.",
-    tags: ["Python", "FastAPI", "faster-whisper", "Ollama", "Kokoro TTS"],
-    links: [{ label: "Code", href: "https://github.com/wtcrowe4/FlowLocal" }],
+      "Always-visible Claude plan usage in the terminal: 5-hour and weekly limits as progress bars with reset countdowns and a burn-rate projection, as a herdr/tmux status bar or a Textual dashboard. One systemd-timed fetcher writes a cache that any number of bars read for free, and the OAuth token is used for a single request header and never stored, logged or refreshed.",
+    tags: ["Python", "Textual", "systemd", "herdr", "tmux"],
+    links: [{ label: "Code", href: "https://github.com/wtcrowe4/claude-usage-meter" }],
+    note: "Open source",
+  },
+  {
+    title: "email-tui: Mail for Terminal Agents",
+    blurb:
+      "Gmail and Outlook from the terminal. A Thunderbird add-on and local bridge let terminal tools and Claude read and organise mail in the running client (folders, archiving, flags, tags, contacts, drafts), and a herdr plugin adds unread badges, new-mail alerts and a mail pane. No dependencies beyond Python and Thunderbird.",
+    tags: ["Python", "Thunderbird add-on", "herdr", "Linux"],
+    links: [{ label: "Code", href: "https://github.com/wtcrowe4/email-tui" }],
     note: "Open source",
   },
   {
@@ -24,6 +32,22 @@ const projects: Project[] = [
     tags: ["AutoHotkey v2", "Python", "FastAPI", "Kokoro TTS", "herdr"],
     links: [{ label: "DialDeck code", href: "https://github.com/wtcrowe4/DialDeck" }],
     note: "Daily driver",
+  },
+  {
+    title: "Dev Environment as Code",
+    blurb:
+      "Shell, terminal, editor, tmux, git and AI-CLI configuration for Windows, WSL and Linux, kept in two Git repos with bootstrap scripts that install the tools and link the config on a fresh machine. The same setup follows me across a laptop, a desktop and a work rig.",
+    tags: ["Bash", "PowerShell", "Neovim", "tmux", "Starship", "WSL"],
+    links: [],
+    note: "Daily driver",
+  },
+  {
+    title: "FlowLocal: Local Voice Dictation",
+    blurb:
+      "Open-source voice-dictation stack for Windows that never leaves the machine: GPU faster-whisper transcription, Ollama text cleanup, retrieval over personal notes, and streamed Kokoro TTS replies, served from FastAPI.",
+    tags: ["Python", "FastAPI", "faster-whisper", "Ollama", "Kokoro TTS"],
+    links: [{ label: "Code", href: "https://github.com/wtcrowe4/FlowLocal" }],
+    note: "Open source",
   },
   {
     title: "Self-Hosted AI Lab",
@@ -43,9 +67,9 @@ const projects: Project[] = [
   },
 ];
 
-function Card({ p }: { p: Project }) {
+function Card({ p, wide }: { p: Project; wide?: boolean }) {
   return (
-    <div className="group min-w-0 bg-bg hover:bg-surface transition-colors p-6 sm:p-8 flex flex-col gap-4">
+    <div className={`group min-w-0 bg-bg hover:bg-surface transition-colors p-6 sm:p-8 flex flex-col gap-4 ${wide ? "md:col-span-2" : ""}`}>
       <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1">
         <h3 className="min-w-0 text-xl font-medium tracking-tight">{p.title}</h3>
         {p.note && (
@@ -97,8 +121,8 @@ export default function Projects() {
         </h2>
 
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-px bg-border border border-border">
-          {projects.map((p) => (
-            <Card key={p.title} p={p} />
+          {projects.map((p, i) => (
+            <Card key={p.title} p={p} wide={projects.length % 2 === 1 && i === projects.length - 1} />
           ))}
         </div>
       </div>
