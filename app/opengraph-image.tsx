@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Thomas Crowe — Full-Stack Developer & Technical Operations Lead";
+export const alt = "Thomas Crowe — Senior Software Engineer";
 
 export default function OpenGraphImage() {
   return new ImageResponse(
@@ -40,7 +40,7 @@ export default function OpenGraphImage() {
               background: "#fb923c",
             }}
           />
-          Full-Stack Developer · LLM &amp; Agent Engineering
+          Senior Software Engineer · Full-Stack · AI Agents
         </div>
         <div
           style={{

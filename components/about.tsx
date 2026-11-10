@@ -8,16 +8,17 @@ export default function About() {
         </h2>
         <div className="mt-12 grid md:grid-cols-2 gap-12 text-lg text-muted2">
           <p>
-            I&apos;m the full-stack developer and technical operations lead
-            for CalibrationWands.com, a division of Fastec Services LLC selling
-            NIST-traceable test standards for metal detectors and X-ray
-            systems. I build and run the storefront, the order-to-manufacturing
-            platform, the accounting and inventory integrations, and the
-            infrastructure underneath them.
+            I&apos;m a senior software engineer at CalibrationWands.com, a
+            division of Fastec Services LLC selling NIST-traceable test
+            standards for metal detectors and X-ray systems. I work alongside
+            the people who use what I build, find where their day gets stuck,
+            and turn that into tools they rely on: the storefront, the
+            order-to-manufacturing platform, the accounting and inventory
+            integrations, and the infrastructure underneath them.
           </p>
           <p>
-            Before engineering I spent eight years running a high-volume
-            business, so I build with the operator&apos;s problem in mind: lean systems,
+            I wear many hats, moving between product, integrations,
+            infrastructure and AI agents as the work needs, and I build lean:
             few dependencies, automation wherever it pays for itself. Lately most of that
             leverage comes from LLMs: production agents parsing purchase
             orders, open models fine-tuned and served on self-hosted hardware, and

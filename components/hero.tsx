@@ -51,7 +51,7 @@ export function Hero() {
 							boxShadow: "0 0 10px var(--color-accent, #fb923c)",
 						}}
 					/>
-					Full-Stack Developer & Technical Operations Lead
+					Senior Software Engineer
 				</div>
 
 				<h1

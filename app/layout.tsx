@@ -7,10 +7,10 @@ const description =
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://thomascrowe.netlify.app"),
-  title: "Thomas Crowe — Full-Stack Developer & Technical Operations Lead",
+  title: "Thomas Crowe — Senior Software Engineer",
   description,
   openGraph: {
-    title: "Thomas Crowe — Full-Stack Developer & Technical Operations Lead",
+    title: "Thomas Crowe — Senior Software Engineer",
     description,
     url: "/",
     siteName: "Thomas Crowe",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Thomas Crowe — Full-Stack Developer & Technical Operations Lead",
+    title: "Thomas Crowe — Senior Software Engineer",
     description,
   },
 };

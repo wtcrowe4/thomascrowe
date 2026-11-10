@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 const items = [
 	{
 		period: "Feb 2024 — Present",
-		role: "Full-Stack Developer & Technical Operations Lead",
+		role: "Senior Software Engineer",
 		company: "CalibrationWands.com (Fastec Services LLC)",
-		desc: "Build and operate the technical stack for a B2B manufacturer of NIST-traceable test standards serving food, pharmaceutical, and textile quality-control customers. Built Test Standards Hub (React/Vite, Express, Prisma/PostgreSQL), which turns WooCommerce orders into certificates, engraving SVGs, and CNC-ready STL files: 3,800+ certificates auto-generated, the core of 500+ hours of manual work eliminated per year. Integrated QuickBooks Desktop and Zoho Inventory with verified, reversible writes; put an LLM intake pipeline with human approval in front of emailed purchase orders; migrated the live store to dedicated DigitalOcean hosting with zero downtime; and run GitLab CI/CD with health-checked deploys, error tracking, and alerting.",
+		desc: "Design, build, and ship production software for a B2B manufacturer of NIST-traceable test standards used by food, pharmaceutical, and textile quality-control teams. Built Test Standards Hub (React/Vite, Express, Prisma/PostgreSQL), which turns WooCommerce orders into certificates, engraving SVGs, and CNC-ready STL files: 3,800+ certificates auto-generated, the core of 500+ hours of manual work eliminated per year. Integrated QuickBooks Desktop and Zoho Inventory with verified, reversible writes; put an LLM intake pipeline with human approval in front of emailed purchase orders; migrated the live store to dedicated DigitalOcean hosting with zero downtime; and run GitLab CI/CD with health-checked deploys, error tracking, and alerting.",
 		tags: ["React", "Node/Express", "PostgreSQL", "WooCommerce", "QuickBooks", "GitLab CI", "Docker", "LLMs"],
 	},
 	{
