@@ -3,7 +3,7 @@
 // PORTFOLIO-OWNED wrapper around the synced <Sawgrass17> scene (not touched by
 // scripts/sync-sawgrass.sh). Replaces the standalone repo's dev HUD
 // (SAT / TRACE / SPLAT / PROPS) with a visitor HUD: pin selector, outcome
-// legend, hovered-shot card.
+// legend, hovered-shot card, landing-dot replay.
 //
 // Also owns the frame loop: <Sawgrass17> creates its own <Canvas> and takes no
 // children, so the loop is driven from outside through R3F's root registry
@@ -13,7 +13,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { _roots, addAfterEffect } from "@react-three/fiber";
 import { Sawgrass17 } from "./Sawgrass17";
 import { PIN_COLORS } from "./parts/Pin";
-import { SAMPLE_SHOTS } from "@/data/sawgrass17-sample-shots";
+import { REAL_SHOTS_2025 } from "@/data/sawgrass17-real-shots-2025";
 import { OUTCOME_COLOR } from "@/lib/golf/types";
 import type { Shot, PinPosition } from "@/lib/golf/types";
 
@@ -37,7 +37,11 @@ export default function Sawgrass17Embed({ intro = true, onReady }: Sawgrass17Emb
   const [pin, setPin] = useState<PinPosition>("sunday");
   const [hovered, setHovered] = useState<Shot | null>(null);
   const onHover = useCallback((s: Shot | null) => setHovered(s), []);
-  const shots = SAMPLE_SHOTS.filter((s) => s.pin === pin);
+  const [replay, setReplay] = useState<Shot | null>(null);
+  const [grabbed, setGrabbed] = useState(false);
+  const onSelect = useCallback((s: Shot) => setReplay(s), []);
+  const onReplayDone = useCallback(() => setReplay(null), []);
+  const shots = REAL_SHOTS_2025.filter((s) => s.pin === pin);
 
   // Ready = the Scene subtree has committed (it sets scene.background), plus a
   // few frames so the first visible frame is not a half-uploaded one.
@@ -92,11 +96,20 @@ export default function Sawgrass17Embed({ intro = true, onReady }: Sawgrass17Emb
   }, []);
 
   return (
-    <div ref={hostRef} className="absolute inset-0">
-      <Sawgrass17 shots={shots} pin={pin} onHoverShot={onHover} intro={intro} />
+    <div ref={hostRef} className="absolute inset-0" onPointerDown={() => setGrabbed(true)}>
+      <Sawgrass17
+        shots={shots}
+        pin={pin}
+        onHoverShot={onHover}
+        intro={intro}
+        onSelectShot={onSelect}
+        replayShot={replay}
+        onReplayDone={onReplayDone}
+        autoRotate={!grabbed && !replay}
+      />
 
       <div className="pointer-events-none absolute bottom-3 left-3 z-10 border sm:top-3 sm:bottom-auto border-white/10 bg-black/60 px-2 py-1 font-mono text-[9px] uppercase tracking-widest text-white/60 backdrop-blur-sm">
-        Illustrative shots
+        Shot data: pgatour.com · THE PLAYERS 2025
       </div>
 
       <div className="absolute top-2 right-2 left-2 z-10 flex flex-wrap justify-end gap-1 sm:top-3 sm:right-3 sm:left-auto sm:max-w-[70%] sm:gap-1.5">
@@ -104,7 +117,7 @@ export default function Sawgrass17Embed({ intro = true, onReady }: Sawgrass17Emb
           <button
             key={p}
             type="button"
-            onClick={() => setPin(p)}
+            onClick={() => { setPin(p); setReplay(null); }}
             aria-pressed={pin === p}
             className={`inline-flex items-center gap-1 border px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-wider sm:gap-1.5 sm:px-2.5 sm:py-1 sm:text-[10px] sm:tracking-widest backdrop-blur-sm transition-colors ${
               pin === p
@@ -137,11 +150,11 @@ export default function Sawgrass17Embed({ intro = true, onReady }: Sawgrass17Emb
               {hovered.player} &middot; {hovered.carryYds} yds{hovered.club ? ` · ${hovered.club}` : ""}
             </div>
             <div className="mt-1 font-mono text-[9px] uppercase tracking-widest text-white/45">
-              Illustrative shot &middot; not tour data
+              Click a landing dot to replay
             </div>
           </div>
         ) : (
-          <span className="hidden sm:inline">{shots.length} shots &middot; {pin} pin &middot; drag to orbit</span>
+          <span className="hidden sm:inline">{shots.length} tee shots &middot; {pin} pin &middot; drag to orbit</span>
         )}
       </div>
     </div>

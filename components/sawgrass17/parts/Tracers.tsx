@@ -5,6 +5,7 @@ import { useFrame, ThreeEvent } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
 import * as THREE from "three";
 import { parabolaPoints } from "@/lib/golf/geometry";
+import { greenReliefAt } from "@/lib/golf/elevation";
 import { OUTCOME_COLOR, Y2W, type Shot } from "@/lib/golf/types";
 
 // Tracers -- animated parabolic arcs from tee to landing for each shot.
@@ -57,9 +58,10 @@ interface TracerProps {
   stagger: number;
   dotR: number;
   onHover?: (shot: Shot | null) => void;
+  onSelect?: (shot: Shot) => void;
 }
 
-function SingleTracer({ shot, index, globalTime, stagger, dotR, onHover }: TracerProps) {
+function SingleTracer({ shot, index, globalTime, stagger, dotR, onHover, onSelect }: TracerProps) {
   const ballRef = useRef<THREE.Mesh>(null);
   const [hovered, setHovered] = useState(false);
 
@@ -73,7 +75,12 @@ function SingleTracer({ shot, index, globalTime, stagger, dotR, onHover }: Trace
   );
 
   const landingW = useMemo(
-    () => new THREE.Vector3(-shot.landing.x * Y2W, 0.06, shot.landing.y * Y2W),
+    // Dots on the contoured green ride the relief (0 off-island).
+    () => {
+      const wx = -shot.landing.x * Y2W;
+      const wz = shot.landing.y * Y2W;
+      return new THREE.Vector3(wx, 0.06 + greenReliefAt(wx, wz), wz);
+    },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [shot.id]
   );
@@ -128,6 +135,11 @@ function SingleTracer({ shot, index, globalTime, stagger, dotR, onHover }: Trace
     onHover?.(shot);
   }, [shot, onHover]);
 
+  const handleClick = useCallback((e: ThreeEvent<MouseEvent>) => {
+    e.stopPropagation();
+    onSelect?.(shot);
+  }, [shot, onSelect]);
+
   const handleOut = useCallback(() => {
     setHovered(false);
     onHover?.(null);
@@ -154,7 +166,7 @@ function SingleTracer({ shot, index, globalTime, stagger, dotR, onHover }: Trace
       </mesh>
 
       {done && (
-        <mesh position={landingW} onPointerOver={handleOver} onPointerOut={handleOut} castShadow>
+        <mesh position={landingW} onPointerOver={handleOver} onPointerOut={handleOut} onClick={handleClick} castShadow>
           <sphereGeometry args={[dotR, 10, 10]} />
           <meshStandardMaterial
             color={color}
@@ -174,9 +186,11 @@ function SingleTracer({ shot, index, globalTime, stagger, dotR, onHover }: Trace
 interface TracersProps {
   shots: Shot[];
   onHoverShot?: (shot: Shot | null) => void;
+  /** Click on a landing dot -- drives the replay chase cam. */
+  onSelectShot?: (shot: Shot) => void;
 }
 
-export function Tracers({ shots, onHoverShot }: TracersProps) {
+export function Tracers({ shots, onHoverShot, onSelectShot }: TracersProps) {
   const timeRef = useRef(0);
   const [globalTime, setGlobalTime] = useState(0);
 
@@ -201,6 +215,7 @@ export function Tracers({ shots, onHoverShot }: TracersProps) {
           stagger={stagger}
           dotR={dotR}
           onHover={onHoverShot}
+          onSelect={onSelectShot}
         />
       ))}
     </group>

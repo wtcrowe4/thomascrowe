@@ -19,7 +19,8 @@
 #   components/golf/Sawgrass17.tsx  -> components/sawgrass17/Sawgrass17.tsx
 #   components/golf/parts/*         -> components/sawgrass17/parts/   (mirrored)
 #   lib/golf/*                      -> lib/golf/                      (mirrored)
-#   data/sample-shots.ts            -> data/sawgrass17-sample-shots.ts
+#   data/real-shots-2025.ts         -> data/sawgrass17-real-shots-2025.ts
+#     (real THE PLAYERS 2025 tee shots; keep the pgatour.com source note visible)
 #   public/hdr/*, public/textures/* -> public/hdr/, public/textures/  (mirrored)
 # Then components/sawgrass17/overrides/parts/* is copied over parts/ -- the
 # portfolio's deliberate replacements (e.g. a no-op GaussianSplat, so the
@@ -45,7 +46,7 @@ git -C "$SRC" archive "$REF" \
   components/golf/Sawgrass17.tsx \
   components/golf/parts \
   lib/golf \
-  data/sample-shots.ts \
+  data/real-shots-2025.ts \
   public/hdr \
   public/textures \
   | tar -x -C "$TMP"
@@ -64,7 +65,8 @@ mirror "$TMP/lib/golf"             "$DEST/lib/golf"
 mirror "$TMP/public/hdr"           "$DEST/public/hdr"
 mirror "$TMP/public/textures"      "$DEST/public/textures"
 mkdir -p "$DEST/data"
-cp "$TMP/data/sample-shots.ts" "$DEST/data/sawgrass17-sample-shots.ts"
+cp "$TMP/data/real-shots-2025.ts" "$DEST/data/sawgrass17-real-shots-2025.ts"
+rm -f "$DEST/data/sawgrass17-sample-shots.ts"  # retired: real names on made-up shots
 
 OVR="$DEST/components/sawgrass17/overrides/parts"
 if [ -d "$OVR" ]; then
@@ -90,7 +92,7 @@ if grep -rnE "(files|url|load)\(?=?\s*[\"'\`]https?://" \
 fi
 # 3. Bare package imports the portfolio does not depend on.
 pkgs="$(grep -rhoE "from [\"'][^\"'.@/][^\"']*[\"']|from [\"']@[^/\"']+/[^\"']+[\"']" \
-          "$DEST/components/sawgrass17" "$DEST/lib/golf" "$DEST/data/sawgrass17-sample-shots.ts" \
+          "$DEST/components/sawgrass17" "$DEST/lib/golf" "$DEST/data/sawgrass17-real-shots-2025.ts" \
         | sed -E "s/from [\"']//; s/[\"']$//" | grep -v '^@/' \
         | sed -E 's#^(@[^/]+/[^/]+|[^@/][^/]*).*#\1#' | sort -u)"
 for p in $pkgs; do
