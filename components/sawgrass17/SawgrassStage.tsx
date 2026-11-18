@@ -29,7 +29,6 @@ function hasWebGL(): boolean {
 export function SawgrassStage() {
   const hostRef = useRef<HTMLDivElement>(null);
   const [gate, setGate] = useState<Gate>("pending");
-  const [reduced, setReduced] = useState(false);
   const [mount, setMount] = useState(false);
   const [ready, setReady] = useState(false);
   const onReady = useCallback(() => setReady(true), []);
@@ -37,7 +36,6 @@ export function SawgrassStage() {
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const small = window.matchMedia("(max-width: 767px)").matches;
-    setReduced(reduce);
     if (!hasWebGL()) setGate("nowebgl");
     else setGate(reduce || small ? "tap" : "auto");
   }, []);
@@ -61,7 +59,7 @@ export function SawgrassStage() {
 
   return (
     <div ref={hostRef} className="absolute inset-0 bg-[#0a0a0a]">
-      {mount && <Sawgrass17Embed intro={!reduced} onReady={onReady} />}
+      {mount && <Sawgrass17Embed intro={false} onReady={onReady} />}
 
       {/* Poster: shown until the scene has drawn, and as the fallback. */}
       <div
