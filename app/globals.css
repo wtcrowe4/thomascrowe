@@ -17,9 +17,9 @@
   --color-negative: #f87171;
 
   /* Fonts */
-  --font-sans: "Space Grotesk", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+  --font-serif: var(--font-fraunces), Georgia, serif;
 
   /* Layout */
   --container-max: 1280px;

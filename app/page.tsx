@@ -10,9 +10,20 @@ import { GolfLab } from "@/components/GolfLab";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Thomas Crowe",
+  jobTitle: "Senior Software Engineer",
+  url: "https://thomascrowe.netlify.app",
+  address: { "@type": "PostalAddress", addressLocality: "Greenville", addressRegion: "SC", addressCountry: "US" },
+  sameAs: ["https://github.com/wtcrowe4", "https://www.linkedin.com/in/wthomascrowe"],
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
       <Nav />
       <Hero />
       <Ticker />

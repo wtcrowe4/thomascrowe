@@ -137,8 +137,8 @@ function TopoOverlaySVG() {
         strokeDasharray="3 5"
       />
 
-      <text x="255" y="390" fill="#fb923c" opacity="0.6" fontSize="8" fontFamily="JetBrains Mono, monospace" letterSpacing="2">+340m</text>
-      <text x="1068" y="330" fill="#fb923c" opacity="0.6" fontSize="8" fontFamily="JetBrains Mono, monospace" letterSpacing="2">+182m</text>
+      <text x="255" y="390" fill="#fb923c" opacity="0.6" fontSize="8" style={{ fontFamily: "var(--font-mono)" }} letterSpacing="2">+340m</text>
+      <text x="1068" y="330" fill="#fb923c" opacity="0.6" fontSize="8" style={{ fontFamily: "var(--font-mono)" }} letterSpacing="2">+182m</text>
     </svg>
   );
 }

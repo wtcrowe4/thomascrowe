@@ -121,7 +121,7 @@ export function GolfLab() {
 										<path key={o} d={LANDING_PATHS[o]} stroke={c} opacity="0.85" />
 									))}
 								</g>
-								<g transform="translate(16, 372)" fontSize="8" fontFamily="JetBrains Mono" fill="#8ba3bf">
+								<g transform="translate(16, 372)" fontSize="8" style={{ fontFamily: "var(--font-mono)" }} fill="#8ba3bf">
 									{[
 										["BIRDIE", "#4ade80", 6],
 										["PAR", "#38bdf8", 62],
