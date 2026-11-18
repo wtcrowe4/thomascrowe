@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TopoCanvas } from "./TopoCanvas";
 
 export function Hero() {
 	return (
@@ -13,7 +12,7 @@ export function Hero() {
 					"radial-gradient(ellipse 100% 80% at 30% 110%, #0a1f3a 0%, #050f1f 60%, #03070f 100%)",
 			}}
 		>
-			<TopoCanvas tileOpacity={0.16} cols={7} rows={5} />
+			<div aria-hidden="true" className="topo-layer" style={{ zIndex: 1, opacity: 0.2 }} />
 
 			<div
 				className="absolute inset-0 pointer-events-none"

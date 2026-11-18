@@ -29,6 +29,24 @@
   --accent-glow: color-mix(in srgb, var(--color-accent) 15%, transparent);
   --accent-glow-strong: color-mix(in srgb, var(--color-accent) 35%, transparent);
   --grid-line: color-mix(in srgb, var(--color-accent) 6%, transparent);
+
+  /* Topographic background: contour lines of Upstate SC (public/topo/*.svg,
+     built by scripts/topo/build_contours.py). The SVG is used as a mask, so
+     the ink colour comes from here and works for any theme. */
+  --topo-src: url("/topo/greenville-county.svg");
+  --topo-ink: #8ba3bf;
+  --topo-opacity: 0.13;
+}
+
+:root[data-topo="upstate"] { --topo-src: url("/topo/upstate.svg"); }
+:root[data-topo="greenville-county"] { --topo-src: url("/topo/greenville-county.svg"); }
+:root[data-topo="escarpment"] { --topo-src: url("/topo/escarpment.svg"); }
+:root[data-topo="downtown-paris-mtn"] { --topo-src: url("/topo/downtown-paris-mtn.svg"); }
+
+/* Light theme ink, ready for when the site gets a light mode. */
+:root[data-theme="light"] {
+  --topo-ink: #3b5577;
+  --topo-opacity: 0.16;
 }
 
 * {
@@ -48,17 +66,25 @@ body {
   position: relative;
 }
 
+.topo-layer,
+body::before {
+  background-color: var(--topo-ink);
+  opacity: var(--topo-opacity);
+  -webkit-mask: var(--topo-src) center / cover no-repeat;
+  mask: var(--topo-src) center / cover no-repeat;
+  pointer-events: none;
+}
+
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image:
-    linear-gradient(var(--grid-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-size: 80px 80px;
-  pointer-events: none;
   z-index: 0;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 90%);
+}
+
+.topo-layer {
+  position: absolute;
+  inset: 0;
 }
 
 ::-webkit-scrollbar { width: 6px; }

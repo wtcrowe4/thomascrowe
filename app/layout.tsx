@@ -33,7 +33,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${sans.variable} ${mono.variable} ${serif.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${sans.variable} ${mono.variable} ${serif.variable}`}>
       <head>
         {/* Netlify injects "\n<!-- This site is hosted on Netlify ... -->" into <head>
             on *.netlify.app production. The stray text node fails hydration (React #418),
@@ -41,6 +41,12 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){var h=document.head;for(var n=h.firstChild;n;){var x=n.nextSibling;if((n.nodeType===3&&!n.nodeValue.trim())||(n.nodeType===8&&/Netlify/.test(n.nodeValue)))h.removeChild(n);n=x;}})();`,
+          }}
+        />
+        {/* Preview only: ?topo=<variant> picks a contour map to compare. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var m=location.search.match(/[?&]topo=([a-z-]+)/);if(m)document.documentElement.setAttribute("data-topo",m[1]);})();`,
           }}
         />
         <noscript>
