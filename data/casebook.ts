@@ -26,7 +26,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Test Standards Hub",
     kicker: "Order-to-manufacturing platform",
     summary:
-      "An internal full-stack platform that turns WooCommerce orders into signed certificates, engraving artwork, CNC files and shop-floor printing.",
+      "An internal full-stack platform that turns WooCommerce orders into signed Certificates of Conformance, engraving artwork, CNC files and shop-floor printing.",
     problem:
       "Orders lived in two disconnected systems, WooCommerce and QuickBooks Desktop. Certificate generation and CNC engraving artwork were manual, and serialized test standards had no system of record.",
     approach:
@@ -43,10 +43,12 @@ export const caseStudies: CaseStudy[] = [
       "Serialized test numbers are tracked for every standard sold, backed by PostgreSQL.",
       "SVG engraving and STL files feed the CNC machine: a software-to-machine production pipeline.",
       "PrintNode prints to the shop floor, UPS labels and tracking are generated with the order, and finished certificates are served through an account-gated portal.",
+      "Test cards for each standard and labels for each sphere bag are generated straight from the order, and each bag label links to that lot's certificate. Nothing is laid out or labeled by hand, and customers can find the certificate for exactly what they received.",
+      "Once an order is invoiced and shipped, it clears itself from the intake queue (staff can close or reopen it), so the order team sees only open work.",
     ],
     stack: ["React/Vite", "Express", "Prisma", "PostgreSQL", "Adobe PDF Services", "pyHanko", "Cloudflare Tunnel", "PrintNode", "SVG/STL"],
     outcome:
-      "3,800+ certificates auto-generated, the core of 500+ hours of manual work eliminated per year. One source of truth across two systems, with manual certificate, printing and engraving steps replaced by an automated pipeline.",
+      "3,800+ certificates auto-generated, the core of a conservative 500+ hours of manual work eliminated per year. One source of truth across two systems, with manual certificate, printing and engraving steps replaced by an automated pipeline.",
     shots: [
       {
         src: "/work/tsh-orders-board.png",
@@ -70,7 +72,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Customer accounts + certificate portal",
     kicker: "Customer experience",
     summary:
-      "Customers sign in and download their own certificates from My Account, pushed there automatically when an order is completed.",
+      "Customers sign in and download their own Certificates of Conformance from My Account, pushed there automatically when an order is completed.",
     problem:
       "Certificates shipped as a hard copy with each order, with no self-serve digital copy a customer could pull up later for an audit or their records.",
     approach:
@@ -114,7 +116,7 @@ export const caseStudies: CaseStudy[] = [
       "QuickBooks Desktop integration over Web Connector and qbXML: invoices, estimates, items, customers and inventory adjustments, with per-write verification.",
       "An audit change log can revert any automated write.",
       "Built behind a provider-agnostic accounting interface, so a future system migration swaps an adapter instead of rewriting the platform.",
-      "Zoho Inventory stock is decremented and builds are planned automatically as certificates are generated.",
+      "Zoho Inventory stock is decremented and builds are planned automatically as Certificates of Conformance are generated.",
       "LLM intake turns emailed purchase orders and quote requests into validated orders, with customer part-number matching, duplicate-invoice detection and prompt-injection guards.",
     ],
     stack: ["Node/Express", "PostgreSQL", "QuickBooks Desktop (qbXML)", "Zoho Inventory API", "LLM pipeline"],

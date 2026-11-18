@@ -3,7 +3,7 @@ import "./globals.css";
 import { MotionProvider } from "@/components/MotionProvider";
 
 const description =
-  "Full-stack developer and technical operations lead in Greenville, SC. Production web platforms, business-system integrations, self-hosted AI, and the infrastructure underneath.";
+  "Senior software engineer in Greenville, SC. Production web platforms, business-system integrations, self-hosted AI, and the infrastructure underneath.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://thomascrowe.netlify.app"),

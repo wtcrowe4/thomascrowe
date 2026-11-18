@@ -29,7 +29,7 @@ export default function About() {
         <div className="mt-16 grid sm:grid-cols-3 gap-px bg-border border border-border">
           {[
             ["3,800+", "NIST-traceable certificates auto-generated"],
-            ["500+ hrs", "of manual work eliminated per year"],
+            ["500+ hrs", "of manual work eliminated per year (conservative)"],
             ["Zero", "downtime on a live production store migration"],
           ].map(([n, label]) => (
             <div key={n} className="bg-bg p-8">
