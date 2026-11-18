@@ -18,6 +18,7 @@ export type CaseStudy = {
   outcome: string;
   shots?: Shot[];
   liveUrl?: string;
+  liveLabel?: string;
 };
 
 export const caseStudies: CaseStudy[] = [

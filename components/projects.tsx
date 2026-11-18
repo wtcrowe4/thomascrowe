@@ -22,7 +22,10 @@ const projects: Project[] = [
     blurb:
       "Gmail and Outlook from the terminal. A Thunderbird add-on and local bridge let terminal tools and Claude read and organise mail in the running client (folders, archiving, flags, tags, contacts, drafts), and a herdr plugin adds unread badges, new-mail alerts and a mail pane. No dependencies beyond Python and Thunderbird.",
     tags: ["Python", "Thunderbird add-on", "herdr", "Linux"],
-    links: [{ label: "Code", href: "https://github.com/wtcrowe4/email-tui" }],
+    links: [
+      { label: "Write-up", href: "/projects/email-tui" },
+      { label: "Code", href: "https://github.com/wtcrowe4/email-tui" },
+    ],
     note: "Open source",
   },
   {
