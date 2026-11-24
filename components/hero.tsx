@@ -71,7 +71,7 @@ export function Hero() {
 					}}
 				>
 					I design, build and run production software for a B2B manufacturer:
-					web platforms, business-system integrations, self-hosted AI, and the
+					web platforms, business-system integrations, self-hosted AI and the
 					infrastructure underneath.
 				</p>
 

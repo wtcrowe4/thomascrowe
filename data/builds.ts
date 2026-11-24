@@ -9,7 +9,7 @@ export const builds: CaseStudy[] = [
     title: "email-tui: Mail Access for AI Agents",
     kicker: "Open source · Agent tooling",
     summary:
-      "A Thunderbird bridge that lets terminal tools and Claude read and organise real mail, designed on the assumption that any email may carry instructions aimed at the agent.",
+      "A Thunderbird bridge that lets terminal tools and Claude read and organize real mail, designed on the assumption that any email may carry instructions aimed at the agent.",
     problem:
       "Agents are useful for mail triage, but a mailbox is untrusted input written by strangers. Giving an agent full account access through new OAuth credentials means one injected instruction could send, delete or leak mail.",
     approach:

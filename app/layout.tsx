@@ -8,7 +8,7 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mo
 const serif = Fraunces({ subsets: ["latin"], axes: ["opsz"], variable: "--font-fraunces", display: "swap" });
 
 const description =
-  "Senior software engineer in Greenville, SC. Production web platforms, business-system integrations, self-hosted AI, and the infrastructure underneath.";
+  "Senior software engineer in Greenville, SC. Production web platforms, business-system integrations, self-hosted AI and the infrastructure underneath.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://thomascrowe.netlify.app"),

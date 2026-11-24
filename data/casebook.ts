@@ -148,7 +148,7 @@ export const caseStudies: CaseStudy[] = [
       ["vLLM + Ollama serving", "Langfuse tracing + evals"],
     ],
     points: [
-      "Six production agents (order processing, PO parsing to SKUs, email triage, document handling and CNC G-code generation) orchestrated with LangGraph and custom Python, several exposed through Slack Socket Mode.",
+      "Six production agents (including order processing, PO parsing to SKUs, email triage, document handling and CNC G-code generation) orchestrated with LangGraph and custom Python, several exposed through Slack Socket Mode.",
       "Models served on a self-hosted stack (vLLM and Ollama) at zero per-call API cost.",
       "Responses are grounded in a pgvector retrieval pipeline, so agents reason over real source documents rather than model memory.",
       "Local models fine-tuned with Unsloth and PyTorch, tracked in Weights & Biases, and quantized with AWQ/GPTQ for throughput.",
